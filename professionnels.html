@@ -1117,12 +1117,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         var prenom=nom?nom.split(' ')[0]:'';
         var data=Object.fromEntries(new FormData(form).entries());
         data.source='b2b-professionnels';
+        data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
+        data.subject='Nouveau lead - B2B tertiaire';
         if(typeof fbq==='function')fbq('track','Lead');
         if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'b2b'});
-        fetch('https://hook.eu1.make.com/wm5r1xlw52bw5opbwv3nij266rgfobdl',{
+        fetch('https://api.web3forms.com/submit',{
           method:'POST',
-          mode:'no-cors',
-          headers:{'Content-Type':'text/plain'},
+          headers:{'Content-Type':'application/json',Accept:'application/json'},
           body:JSON.stringify(data)
         });
         document.getElementById('thanksMsg').textContent='Merci'+(prenom?' '+prenom:'')+'. Un chargé de projets CEE tertiaire vous rappelle sous 1h.';

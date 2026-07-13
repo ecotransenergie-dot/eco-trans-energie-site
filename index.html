@@ -1009,12 +1009,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       e.preventDefault();
       var data=Object.fromEntries(new FormData(form).entries());
       data.source='devis-index';
+      data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
+      data.subject='Nouveau lead - Devis (site particulier)';
       if(typeof fbq==='function')fbq('track','Lead');
       if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'devis'});
-      fetch('https://hook.eu1.make.com/6qjlj5o6oz9a1o4hnkwx6hbeke48zsng',{
+      fetch('https://api.web3forms.com/submit',{
         method:'POST',
-        mode:'no-cors',
-        headers:{'Content-Type':'text/plain'},
+        headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify(data)
       }).finally(function(){
         window.location.href='merci.html';
