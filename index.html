@@ -48,8 +48,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <!-- End LinkedIn Insight Tag -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rénovation Énergétique Lyon & Métropole | Pompe à Chaleur, CEE, Ma Prime Rénov | Eco Trans'Énergie</title>
-<meta name="description" content="Installation pompe à chaleur, isolation, panneaux solaires à Lyon, Villeurbanne, Bron, Vénissieux et toute la Métropole. Reste à charge à partir de 1 000 € après CEE et Ma Prime Rénov. Dossier géré pour vous.">
+<title>Pompe à Chaleur Air/Eau Clé en Main Lyon & Métropole | Eco Trans'Énergie</title>
+<meta name="description" content="PAC air/eau clé en main à Lyon, Villeurbanne, Bron, Vénissieux et toute la Métropole : un seul interlocuteur du diagnostic au chantier fini. Reste à charge à partir de 1 000 € après CEE et Ma Prime Rénov. Isolation, VMC, ballon thermodynamique et photovoltaïque aussi disponibles.">
 <meta name="keywords" content="rénovation énergétique Lyon, pompe à chaleur Lyon, isolation thermique Lyon, Ma Prime Rénov Lyon, pompe à chaleur Villeurbanne, rénovation énergétique Bron, rénovation énergétique Vénissieux, installateur RGE Lyon, reste à charge PAC Lyon">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Eco Trans'Énergie">
@@ -396,10 +396,10 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <section id="hero" class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <div class="badge"><span class="dot"></span><span class="txt">CEE + Ma Prime Rénov gérés pour vous</span></div>
-        <h1 class="h1">Rénovation énergétique à Lyon et sa Métropole — reste à charge <span class="gold">à partir de 1 000 €</span> avec CEE et Ma Prime Rénov</h1>
-        <p class="hero-tag">Pompes à chaleur · Isolation · Panneaux solaires · Dossiers subventions gérés pour vous</p>
-        <p class="hero-lead">Eco Trans'Énergie accompagne les propriétaires de maison individuelle à Lyon, Villeurbanne, Vénissieux, Bron, Caluire et toute la Métropole pour leurs travaux de rénovation énergétique. Pompe à chaleur, isolation, ballon thermodynamique, VMC, panneaux solaires : nous gérons le chiffrage, le dossier CEE et Ma Prime Rénov, et la coordination de l'installateur RGE. Votre reste à charge : à partir de 1 000 €.</p>
+        <div class="badge"><span class="dot"></span><span class="txt">Un seul interlocuteur, du diagnostic au chantier fini</span></div>
+        <h1 class="h1">Pompe à chaleur air/eau clé en main à Lyon et sa Métropole — reste à charge <span class="gold">à partir de 1 000 €</span> avec CEE et Ma Prime Rénov</h1>
+        <p class="hero-tag">Un seul interlocuteur du diagnostic au chantier fini · Isolation, VMC, ballon thermodynamique, photovoltaïque aussi disponibles</p>
+        <p class="hero-lead">Eco Trans'Énergie accompagne les propriétaires de maison individuelle à Lyon, Villeurbanne, Vénissieux, Bron, Caluire et toute la Métropole dans leur projet de pompe à chaleur air/eau. Contrairement à un simple installateur, nous restons votre unique interlocuteur : chiffrage, dossier CEE et Ma Prime Rénov, coordination de l'installateur RGE, suivi du chantier jusqu'à la fin. Isolation, ballon thermodynamique, VMC et panneaux solaires disponibles en complément. Votre reste à charge : à partir de 1 000 €.</p>
         <div class="hero-actions">
           <a class="btn-gold" href="simulateur.html">Calculer mes aides maintenant</a>
           <a class="link-under" href="#temoignages">Voir nos réalisations →</a>
@@ -1009,13 +1009,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       e.preventDefault();
       var data=Object.fromEntries(new FormData(form).entries());
       data.source='devis-index';
-      data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
-      data.subject='Nouveau lead - Devis (site particulier)';
       if(typeof fbq==='function')fbq('track','Lead');
       if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'devis'});
-      fetch('https://api.web3forms.com/submit',{
+      fetch('https://hook.eu1.make.com/6qjlj5o6oz9a1o4hnkwx6hbeke48zsng',{
         method:'POST',
-        headers:{'Content-Type':'application/json',Accept:'application/json'},
+        mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
         body:JSON.stringify(data)
       }).finally(function(){
         window.location.href='merci.html';
