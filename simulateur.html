@@ -547,5 +547,15 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       <a href="professionnels.html#form" style="font-size:13px;color:rgba(245,240,232,.6);text-decoration:none">Contact</a>
     </nav>
   </footer>
+
+  <script>
+  (function(){
+    var q=window.location.search;
+    if(!q)return;
+    document.querySelectorAll('a[href^="index.html#formulaire-devis"]').forEach(function(a){
+      a.setAttribute('href','index.html'+q+'#formulaire-devis');
+    });
+  })();
+  </script>
 </body>
 </html>
