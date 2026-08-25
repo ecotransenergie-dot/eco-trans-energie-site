@@ -504,13 +504,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     var prenom=nom?nom.split(' ')[0]:'';
     var data=Object.fromEntries(new FormData(form).entries());
     data.source='partenaire';
-    data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
-    data.subject='Nouveau lead - Partenaire';
     if(typeof fbq==='function')fbq('track','Lead');
     if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'partenaire'});
-    fetch('https://api.web3forms.com/submit',{
+    fetch('https://hook.eu1.make.com/6qjlj5o6oz9a1o4hnkwx6hbeke48zsng',{
       method:'POST',
-      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
       body:JSON.stringify(data)
     });
     document.getElementById('partnerThanksMsg').textContent='Merci'+(prenom?' '+prenom:'')+'. Nous revenons vers vous sous 48h.';
@@ -573,5 +572,6 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   </div>
 </footer>
 
+<script>document.querySelectorAll(".mobile-nav a").forEach(function(a){a.addEventListener("click",function(){var cb=document.getElementById("nav-toggle");if(cb)cb.checked=false;});});</script>
 </body>
 </html>
