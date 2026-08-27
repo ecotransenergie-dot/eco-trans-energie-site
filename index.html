@@ -1028,7 +1028,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify(data)
-      }).then(function(){
+      }).then(function(res){return res.json();})
+      .then(function(json){
+        if(!json||json.success!==true)throw new Error('Web3Forms a refuse la demande');
         if(typeof fbq==='function')fbq('track','Lead');
         if(typeof gtag==='function'){
           gtag('event','generate_lead',{form_name:'devis'});

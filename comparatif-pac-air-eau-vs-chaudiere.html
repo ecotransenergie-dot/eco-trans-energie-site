@@ -261,7 +261,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify(data)
-    }).then(function(){unlock(false);})
+    }).then(function(res){return res.json();})
+    .then(function(json){unlock(!(json&&json.success===true));})
     .catch(function(){unlock(true);});
   });
 })();
