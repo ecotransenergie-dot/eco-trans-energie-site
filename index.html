@@ -357,6 +357,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .se .note-box{background:rgba(201,168,106,.1);border:1px solid rgba(201,168,106,.4);border-radius:8px;padding:12px 14px;margin-top:12px}
   .se .note-box p{font-size:12.5px;color:#4A4A4A;line-height:1.5}
   .se .sim-disclaimer{font-size:12px;color:#8A8A8A;line-height:1.55;text-align:center;padding:16px 0 0}
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#0F5132;box-shadow:0 -6px 20px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .sticky-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;text-decoration:none;border-radius:4px;padding:12px 10px;white-space:nowrap;text-align:center;flex:1;max-width:240px}
+  .sticky-cta .sc-devis{background:#C9A86A;color:#0F5132}
+  .sticky-cta .sc-tel{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  body{padding-bottom:64px}
+  @media(min-width:900px){.sticky-cta{display:none}body{padding-bottom:0}}
 </style>
 </head>
 <body>
@@ -404,6 +410,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <a class="btn-gold" href="simulateur.html">Calculer mes aides maintenant</a>
           <a class="link-under" href="#temoignages">Voir nos garanties →</a>
         </div>
+        <p style="color:rgba(255,255,255,.6);font-size:13px;margin-top:14px">Montant indicatif selon vos revenus et votre logement, confirmé après étude gratuite.</p>
       </div>
       <div class="hero-media">
         <div class="ph">
@@ -476,7 +483,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <div class="step">
           <div class="top"><span class="no">01</span><span class="rule"></span></div>
           <h3>Audit technique gratuit</h3>
-          <p>Nous visitons votre logement, analysons votre situation et vous fournissons une simulation sous 48 heures : coût, subventions, reste à charge exact. Gratuit et sans engagement.</p>
+          <p>Nous visitons votre logement, analysons votre situation et vous fournissons une simulation sous 48 heures : coût, subventions, reste à charge estimé. Gratuit et sans engagement.</p>
         </div>
         <div class="step">
           <div class="top"><span class="no">02</span><span class="rule"></span></div>
@@ -705,7 +712,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         </details>
         <details class="faq-item">
           <summary><span class="q">Sous quel délai puis-je avoir une simulation ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-          <p class="a">Nous vous fournissons une simulation complète — coût, subventions, reste à charge exact — sous 48 heures après notre audit technique gratuit à votre domicile.</p>
+          <p class="a">Nous vous fournissons une simulation complète — coût, subventions, reste à charge estimé — sous 48 heures après notre audit technique gratuit à votre domicile.</p>
         </details>
         <details class="faq-item">
           <summary><span class="q">Vos installateurs sont-ils certifiés RGE ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
@@ -730,7 +737,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <div>
           <span class="eyebrow" style="color:rgba(201,168,106,.7)">Diagnostic gratuit</span>
           <h2>Obtenez votre simulation personnalisée sous 48h</h2>
-          <p>Un expert visite votre logement, analyse votre situation et vous remet une simulation chiffrée : coût total, montant de vos aides, reste à charge exact. Gratuit et sans engagement.</p>
+          <p>Un expert visite votre logement, analyse votre situation et vous remet une simulation chiffrée : coût total, montant de vos aides, reste à charge estimé. Gratuit et sans engagement.</p>
           <div class="contact-actions">
             <a href="tel:+33482533165" class="contact-tel">04 82 53 31 65</a>
             <span class="contact-note">Lun–Ven 8h–19h · Sam 9h–17h</span>
@@ -1016,15 +1023,20 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       data.source=params.get('utm_source')?params.get('utm_source')+(params.get('utm_campaign')?'-'+params.get('utm_campaign'):''):'devis-index';
       data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
       data.subject='Nouveau lead - Devis (site particulier)';
+      if(typeof gtag==='function')gtag('event','form_submit_attempt',{form_name:'devis'});
       fetch('https://api.web3forms.com/submit',{
         method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify(data)
       }).then(function(){
         if(typeof fbq==='function')fbq('track','Lead');
-        if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'devis'});
+        if(typeof gtag==='function'){
+          gtag('event','generate_lead',{form_name:'devis'});
+          gtag('event','form_submit_success',{form_name:'devis'});
+        }
         window.location.href='merci.html';
       }).catch(function(){
+        if(typeof gtag==='function')gtag('event','form_submit_error',{form_name:'devis'});
         if(errorMsg)errorMsg.style.display='block';
         if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Je demande mon diagnostic gratuit';}
       });
@@ -1032,5 +1044,53 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   })();
   </script>
 <script>document.querySelectorAll(".mobile-nav a").forEach(function(a){a.addEventListener("click",function(){var cb=document.getElementById("nav-toggle");if(cb)cb.checked=false;});});</script>
+
+<!-- ============ CTA FLOTTANT MOBILE ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#formulaire-devis" class="sc-devis" id="stickyCtaDevis">Estimer mon projet</a>
+  <a href="tel:+33482533165" class="sc-tel">Appeler</a>
+</div>
+
+<script>
+(function(){
+  function track(name,params){ if(typeof gtag==='function') gtag('event', name, params||{}); }
+
+  // Clic sur le CTA flottant -> ouvre le formulaire de devis
+  document.getElementById('stickyCtaDevis').addEventListener('click',function(){
+    track('cta_click',{cta_location:'sticky_mobile'});
+  });
+
+  // Tout lien tel: sur la page
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click',function(){ track('phone_click',{link_location:a.closest('section')?a.closest('section').id||'unknown':'unknown'}); });
+  });
+
+  // Tout lien vers le simulateur (départ du tunnel)
+  document.querySelectorAll('a[href^="simulateur.html"]').forEach(function(a){
+    a.addEventListener('click',function(){ track('simulator_start',{link_location:a.closest('section')?a.closest('section').id||'unknown':'unknown'}); });
+  });
+
+  // Vue du bloc formulaire (form_view), une seule fois
+  var formSection=document.getElementById('formulaire-devis');
+  if(formSection && 'IntersectionObserver' in window){
+    var seen=false;
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !seen){ seen=true; track('form_view'); obs.disconnect(); }
+      });
+    },{threshold:0.3});
+    obs.observe(formSection);
+  }
+
+  // Premiere interaction dans le formulaire (form_start), une seule fois
+  var devisForm=document.getElementById('devisForm');
+  if(devisForm){
+    var started=false;
+    devisForm.addEventListener('input',function(){
+      if(!started){ started=true; track('form_start'); }
+    },{once:false});
+  }
+})();
+</script>
 </body>
 </html>
