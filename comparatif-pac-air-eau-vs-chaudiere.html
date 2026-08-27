@@ -244,17 +244,26 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     data.source='ebook-comparatif-pac-chaudiere';
     data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
     data.subject='Nouveau lead - Ebook comparatif PAC vs chaudière';
-    if(typeof fbq==='function')fbq('track','Lead');
-    if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'ebook-comparatif'});
+    function unlock(sendFailed){
+      if(typeof fbq==='function')fbq('track','Lead');
+      if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'ebook-comparatif'});
+      document.getElementById('gateSection').style.display='none';
+      document.getElementById('content').style.display='block';
+      window.scrollTo({top:0,behavior:'smooth'});
+      if(sendFailed){
+        var warn=document.createElement('p');
+        warn.style.cssText='color:#B3261E;font-size:14px;margin-top:8px';
+        warn.textContent='Un souci technique nous a peut-être empêché de recevoir votre demande. Pour être sûr d\'être recontacté, appelez-nous au 04 82 53 31 65.';
+        document.getElementById('content').prepend(warn);
+      }
+    }
     fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify(data)
-    }).finally(function(){
-      document.getElementById('gateSection').style.display='none';
-      document.getElementById('content').style.display='block';
-      window.scrollTo({top:0,behavior:'smooth'});
-    });
+    }).then(function(res){return res.json().catch(function(){return {success:false};});})
+    .then(function(json){unlock(!(json&&json.success));})
+    .catch(function(){unlock(true);});
   });
 })();
 </script>

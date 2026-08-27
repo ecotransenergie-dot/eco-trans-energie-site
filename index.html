@@ -764,6 +764,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
             </select>
             <button type="submit" class="btn-submit">Je demande mon diagnostic gratuit</button>
           </form>
+          <p id="devisFormError" style="display:none;color:#B3261E;font-size:14px;margin-top:8px">L'envoi a échoué. Merci de réessayer, ou appelez-nous directement au <a href="tel:+33482533165" style="color:inherit;text-decoration:underline">04 82 53 31 65</a>.</p>
           <p class="form-note">Sans engagement · Réponse sous 48h · <a href="mentions-legales.html" style="color:inherit;text-decoration:underline">Données confidentielles (RGPD)</a></p>
         </div>
       </div>
@@ -1004,21 +1005,33 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   (function(){
     var form=document.getElementById('devisForm');
     if(!form)return;
+    var errorMsg=document.getElementById('devisFormError');
+    var submitBtn=form.querySelector('.btn-submit');
     form.addEventListener('submit',function(e){
       e.preventDefault();
+      if(errorMsg)errorMsg.style.display='none';
+      if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Envoi en cours...';}
       var data=Object.fromEntries(new FormData(form).entries());
       var params=new URLSearchParams(window.location.search);
       data.source=params.get('utm_source')?params.get('utm_source')+(params.get('utm_campaign')?'-'+params.get('utm_campaign'):''):'devis-index';
       data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
       data.subject='Nouveau lead - Devis (site particulier)';
-      if(typeof fbq==='function')fbq('track','Lead');
-      if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'devis'});
       fetch('https://api.web3forms.com/submit',{
         method:'POST',
         headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify(data)
-      }).finally(function(){
-        window.location.href='merci.html';
+      }).then(function(res){return res.json().catch(function(){return {success:false};});})
+      .then(function(json){
+        if(json&&json.success){
+          if(typeof fbq==='function')fbq('track','Lead');
+          if(typeof gtag==='function')gtag('event','generate_lead',{form_name:'devis'});
+          window.location.href='merci.html';
+        }else{
+          throw new Error('Echec envoi Web3Forms');
+        }
+      }).catch(function(){
+        if(errorMsg)errorMsg.style.display='block';
+        if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Je demande mon diagnostic gratuit';}
       });
     });
   })();
