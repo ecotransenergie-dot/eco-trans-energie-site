@@ -357,8 +357,10 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .se .note-box{background:rgba(201,168,106,.1);border:1px solid rgba(201,168,106,.4);border-radius:8px;padding:12px 14px;margin-top:12px}
   .se .note-box p{font-size:12.5px;color:#4A4A4A;line-height:1.5}
   .se .sim-disclaimer{font-size:12px;color:#8A8A8A;line-height:1.55;text-align:center;padding:16px 0 0}
-  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#0F5132;box-shadow:0 -6px 20px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
-  .sticky-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;text-decoration:none;border-radius:4px;padding:12px 10px;white-space:nowrap;text-align:center;flex:1;max-width:240px}
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#0F5132;box-shadow:0 -6px 20px rgba(0,0,0,.18);display:flex;align-items:stretch;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .sticky-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-decoration:none;border-radius:4px;padding:12px 6px;text-align:center;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;justify-content:center}
+  .sticky-cta .sc-devis{flex:1.3}
+  .sticky-cta .sc-tel{flex:1}
   .sticky-cta .sc-devis{background:#C9A86A;color:#0F5132}
   .sticky-cta .sc-tel{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
   body{padding-bottom:64px}
@@ -1049,7 +1051,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
 <!-- ============ CTA FLOTTANT MOBILE ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="#formulaire-devis" class="sc-devis" id="stickyCtaDevis">Estimer mon projet</a>
+  <a href="#formulaire-devis" class="sc-devis" id="stickyCtaDevis">Mon estimation</a>
   <a href="tel:+33482533165" class="sc-tel">Appeler</a>
 </div>
 
