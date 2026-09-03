@@ -445,7 +445,6 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       var prix=solPrix(s.solKey,s.surface);
       var mpr=curSol.mprimePerM2?Math.round(curSol.mprimePerM2[s.profil]*s.surface):curSol.mprime[s.profil];
       var cee=curSol.cee[s.profil];
-      if(curSol.ceePacEau){cee=s.profil==='TM'?(s.surface>=90?7000:5000):4000;}
       var anahAide=0, useAnah=s.anah&&curSol.anah;
       if(useAnah){var prixHT=prix/1.055,dep=Math.min(prixHT,ANAH_PLAFOND_HT);anahAide=Math.min(Math.round(dep*TAUX_ANAH[s.profil]),ANAH_MAX[s.profil]);}
       var aideMPR=useAnah?0:mpr, aideANAH=useAnah?anahAide:0, aideCEE=useAnah?0:cee;
