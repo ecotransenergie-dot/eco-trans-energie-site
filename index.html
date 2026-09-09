@@ -891,7 +891,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       pac_aa:{label:'PAC air/air',sub:'Climatisation réversible',prixBase:9000,prixM2:null,eco:0.55,multi:false,mprime:{TM:0,MO:0,IN:0,SU:0},cee:{TM:600,MO:600,IN:600,SU:600}},
       iso_combles:{label:'Isolation des combles',sub:'Combles perdus ou aménagés',prixBase:null,prixM2:59,eco:0.15,multi:false,mprimePerM2:{TM:25,MO:20,IN:15,SU:0},mprime:{TM:0,MO:0,IN:0,SU:0},cee:{TM:800,MO:800,IN:500,SU:500}},
       iso_ite:{label:'Isolation extérieure (ITE)',sub:'Parcours Ampleur uniquement en 2026',prixBase:null,prixM2:190,eco:0.20,anah:true,multi:true,mprime:{TM:0,MO:0,IN:0,SU:0},cee:{TM:3000,MO:3000,IN:2000,SU:2000}},
-      ballon:{label:'Ballon thermodynamique',sub:'Eau chaude sanitaire',prixBase:3500,prixM2:null,eco:0.08,multi:false,mprime:{TM:1200,MO:800,IN:400,SU:0},cee:{TM:700,MO:700,IN:500,SU:500}},
+      // MaPrimeRénov' sortie du Parcours par geste au 01/09/2026 (décret n°2026-822) : mprime à 0 sur tous les profils.
+      // CEE : bonus temporaire x7 (modestes)/x4 (autres) jusqu'au 31/12/2026, montant réel dépendant du prix de marché des certificats — valeurs ci-dessous indicatives, à reconfirmer par simulation avant le 01/01/2027.
+      ballon:{label:'Ballon thermodynamique',sub:'Eau chaude sanitaire — CEE seul depuis le 01/09/2026, montant à confirmer',prixBase:3500,prixM2:null,eco:0.08,multi:false,mprime:{TM:0,MO:0,IN:0,SU:0},cee:{TM:700,MO:700,IN:400,SU:400}},
       vmc_df:{label:'VMC double flux',sub:'Ventilation mécanique contrôlée',prixBase:11900,prixM2:null,eco:0.06,multi:false,mprime:{TM:2500,MO:2000,IN:1500,SU:0},cee:{TM:1000,MO:1000,IN:600,SU:600}},
       menuiseries:{label:'Remplacement des menuiseries',sub:'Fenêtres / portes-fenêtres',prixBase:8000,prixM2:null,eco:0.09,multi:false,mprime:{TM:1000,MO:800,IN:400,SU:0},cee:{TM:300,MO:300,IN:300,SU:300}},
       reno_gl:{label:'Rénovation globale',sub:'PAC air/eau + ballon thermodynamique + isolation combles + plancher bas + VMC simple flux',prixBase:null,prixM2:null,eco:0.58,anah:true,multi:true,mprime:{TM:0,MO:0,IN:0,SU:0},cee:{TM:7000,MO:7000,IN:5000,SU:5000}},
