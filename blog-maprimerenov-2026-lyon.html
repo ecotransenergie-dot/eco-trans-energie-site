@@ -117,9 +117,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .inline-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#0F5132;background:#C9A86A;text-decoration:none;padding:13px 24px;border-radius:4px;white-space:nowrap;flex-shrink:0}
   .inline-cta a:hover{background:#d8ba80}
   .faq{margin-top:48px}.faq h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#0F5132;margin-bottom:24px}
-  .faq-item{border-bottom:1px solid rgba(15,81,50,.1);padding:20px 0}.faq-item:last-child{border-bottom:none}
-  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;margin-bottom:10px}
-  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A}
+  .faq-item{border-bottom:1px solid rgba(15,81,50,.1)}.faq-item:last-child{border-bottom:none}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .chev{flex-shrink:0;transition:transform .3s ease}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132}
+  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A;padding:0 0 18px}
   .related{padding:48px 0 80px;border-top:1px solid rgba(15,81,50,.1);margin-top:48px}
   .related h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:20px}
   .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -310,30 +314,30 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="faq">
       <h2>Questions fréquentes sur MaPrimeRénov' à Lyon</h2>
 
-      <div class="faq-item">
-        <p class="faq-q">Peut-on cumuler MaPrimeRénov' et l'Éco-PTZ sur les mêmes travaux ?</p>
+      <details class="faq-item" open>
+        <summary><span class="faq-q">Peut-on cumuler MaPrimeRénov' et l'Éco-PTZ sur les mêmes travaux ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, depuis 2020 le cumul est autorisé sans restriction. L'Éco-PTZ permet de financer le reste à charge après MaPrimeRénov' et CEE, sans intérêts, sur une durée pouvant aller jusqu'à 20 ans.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">MaPrimeRénov' est-elle accessible aux propriétaires bailleurs ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">MaPrimeRénov' est-elle accessible aux propriétaires bailleurs ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, les propriétaires bailleurs peuvent bénéficier de MaPrimeRénov', sous condition que le logement soit loué (ou mis en location dans les 6 mois suivant les travaux) à titre de résidence principale. Les taux d'aide sont identiques aux propriétaires occupants pour les mêmes niveaux de revenus.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Qu'est-ce qu'un Mon Accompagnateur Rénov' (MAR) et en ai-je besoin ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Qu'est-ce qu'un Mon Accompagnateur Rénov' (MAR) et en ai-je besoin ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Le MAR est un professionnel agréé par l'ANAH qui accompagne les ménages dans leur projet de rénovation d'ampleur. Il est obligatoire pour les dossiers de rénovation d'ampleur (gain ≥ 2 classes DPE) dont le montant de travaux dépasse 5 000 €. Pour les gestes isolés (PAC, combles), il n'est pas requis.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Combien de temps faut-il pour recevoir MaPrimeRénov' après les travaux ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Combien de temps faut-il pour recevoir MaPrimeRénov' après les travaux ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Une fois le dossier complet déposé sur maprimerenov.gouv.fr après réception des travaux, l'ANAH dispose de 3 mois pour instruire le dossier. En pratique, les délais varient de 1 à 4 mois selon la charge de traitement. Les paiements sont versés directement sur le compte bancaire du bénéficiaire.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Écoréno'v s'applique-t-il également à Meyzieu et aux communes de la Métropole ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Écoréno'v s'applique-t-il également à Meyzieu et aux communes de la Métropole ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, Écoréno'v couvre l'ensemble des 59 communes de la Métropole de Lyon, dont Meyzieu, Décines, Villeurbanne, Bron, Vénissieux et toutes les communes de l'agglomération. Contactez l'ALEC Lyon pour vérifier l'éligibilité de votre logement et obtenir un accompagnement gratuit.</p>
-      </div>
+      </details>
     </div>
 
     <div class="related">

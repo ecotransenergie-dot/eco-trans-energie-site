@@ -120,9 +120,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .inline-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#0F5132;background:#C9A86A;text-decoration:none;padding:13px 24px;border-radius:4px;white-space:nowrap;flex-shrink:0}
   .inline-cta a:hover{background:#d8ba80}
   .faq{margin-top:48px}.faq h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#0F5132;margin-bottom:24px}
-  .faq-item{border-bottom:1px solid rgba(15,81,50,.1);padding:20px 0}.faq-item:last-child{border-bottom:none}
-  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;margin-bottom:10px}
-  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A}
+  .faq-item{border-bottom:1px solid rgba(15,81,50,.1)}.faq-item:last-child{border-bottom:none}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .chev{flex-shrink:0;transition:transform .3s ease}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132}
+  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A;padding:0 0 18px}
   .zones{padding:48px 0 80px;border-top:1px solid rgba(15,81,50,.1);margin-top:48px}
   .zones h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:20px}
   .zones-list{display:flex;flex-wrap:wrap;gap:10px}
@@ -235,20 +239,20 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="faq">
       <h2>Questions fréquentes — PAC air/eau à Vénissieux</h2>
 
-      <div class="faq-item">
-        <p class="faq-q">Intervenez-vous dans tous les quartiers de Vénissieux ?</p>
+      <details class="faq-item" open>
+        <summary><span class="faq-q">Intervenez-vous dans tous les quartiers de Vénissieux ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, nos installateurs RGE partenaires interviennent sur l'ensemble de la commune, aussi bien dans les quartiers pavillonnaires (Vénissy, Moulin à Vent, Charréard) que dans le reste de la ville, pour toute maison individuelle éligible.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Ma chaudière fioul est ancienne, puis-je bénéficier d'une aide majorée ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Ma chaudière fioul est ancienne, puis-je bénéficier d'une aide majorée ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Le remplacement d'une chaudière au fioul ou au gaz par une PAC air/eau ouvre droit au CEE Coup de pouce Chauffage, dont le montant dépend de votre profil de revenus. C'est justement ce type de remplacement qui est le plus valorisé par les aides actuelles.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Quel est le délai entre le devis et la fin du chantier ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Quel est le délai entre le devis et la fin du chantier ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Comptez généralement 4 à 8 semaines entre la signature du devis et la fin des travaux, selon les délais de livraison du matériel et la planification de l'installateur partenaire.</p>
-      </div>
+      </details>
     </div>
 
     <div class="zones">

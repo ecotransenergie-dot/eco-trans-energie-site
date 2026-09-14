@@ -135,10 +135,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
   .faq{margin-top:48px}
   .faq h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#0F5132;margin-bottom:24px}
-  .faq-item{border-bottom:1px solid rgba(15,81,50,.1);padding:20px 0}
+  .faq-item{border-bottom:1px solid rgba(15,81,50,.1)}
   .faq-item:last-child{border-bottom:none}
-  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;margin-bottom:10px}
-  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .chev{flex-shrink:0;transition:transform .3s ease}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132}
+  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A;padding:0 0 18px}
 
   .related{padding:48px 0 80px;border-top:1px solid rgba(15,81,50,.1);margin-top:48px}
   .related h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:20px}
@@ -336,30 +340,30 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="faq">
       <h2>Questions fréquentes sur le Décret Tertiaire</h2>
 
-      <div class="faq-item">
-        <p class="faq-q">Mon bâtiment fait 850 m² — suis-je concerné par le Décret Tertiaire ?</p>
+      <details class="faq-item" open>
+        <summary><span class="faq-q">Mon bâtiment fait 850 m² — suis-je concerné par le Décret Tertiaire ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Non, si votre surface totale est inférieure à 1 000 m² et que vous n'exploitez pas d'autres surfaces tertiaires sur le même site. En revanche, si vous êtes propriétaire de plusieurs bâtiments tertiaires sur un même site dont la surface cumulée dépasse 1 000 m², le décret s'applique à l'ensemble.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Je suis locataire, pas propriétaire — qui est responsable de la déclaration OPERAT ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Je suis locataire, pas propriétaire — qui est responsable de la déclaration OPERAT ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">L'obligation pèse sur le propriétaire ET sur l'exploitant (locataire). En pratique, le bailleur est responsable des travaux d'enveloppe (isolation, fenêtres) tandis que l'exploitant est responsable de ses équipements (éclairage, chauffage de process). Les deux parties doivent collaborer pour la déclaration sur OPERAT.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Comment choisir la meilleure année de référence ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Comment choisir la meilleure année de référence ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Choisissez l'année entre 2010 et 2019 où votre consommation d'énergie était la plus élevée. Cela maximise la "marge" à disposition pour atteindre le −40 %. Si vous n'avez pas de données historiques fiables, l'ADEME met à disposition des valeurs d'usage par type d'activité sur la plateforme OPERAT.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Les CEE permettent-ils de financer les travaux nécessaires à la conformité Décret Tertiaire ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Les CEE permettent-ils de financer les travaux nécessaires à la conformité Décret Tertiaire ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, et c'est le principal levier financier. Les fiches CEE BAT (isolation, PAC, GTB, VMC) financent précisément les travaux qui réduisent la consommation énergétique. Dans certains cas, les aides CEE + Fonds Chaleur ADEME couvrent 30 à 45 % du coût des travaux, ce qui accélère significativement le retour sur investissement.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Que se passe-t-il si je ne suis pas encore conforme à l'échéance 2030 ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Que se passe-t-il si je ne suis pas encore conforme à l'échéance 2030 ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Si vous déclarez sur OPERAT et montrez une trajectoire crédible vers les objectifs (même si vous n'êtes pas encore à −40 %), les sanctions sont moins systématiques. En revanche, le défaut de déclaration est sanctionné indépendamment de la performance réelle. La priorité est donc de vous inscrire sur OPERAT et de déclarer avant le 30 septembre 2026.</p>
-      </div>
+      </details>
     </div>
 
     <div class="related">

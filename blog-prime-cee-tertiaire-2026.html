@@ -126,10 +126,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .inline-cta a:hover{background:#d8ba80}
   .faq{margin-top:48px}
   .faq h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#0F5132;margin-bottom:24px}
-  .faq-item{border-bottom:1px solid rgba(15,81,50,.1);padding:20px 0}
+  .faq-item{border-bottom:1px solid rgba(15,81,50,.1)}
   .faq-item:last-child{border-bottom:none}
-  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;margin-bottom:10px}
-  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .chev{flex-shrink:0;transition:transform .3s ease}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132}
+  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A;padding:0 0 18px}
   .related{padding:48px 0 80px;border-top:1px solid rgba(15,81,50,.1);margin-top:48px}
   .related h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:20px}
   .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -323,30 +327,30 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="faq">
       <h2>Questions fréquentes sur les CEE tertiaires</h2>
 
-      <div class="faq-item">
-        <p class="faq-q">Un bâtiment en location peut-il bénéficier des CEE ?</p>
+      <details class="faq-item" open>
+        <summary><span class="faq-q">Un bâtiment en location peut-il bénéficier des CEE ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui. Les CEE peuvent être sollicités aussi bien par le propriétaire (pour les travaux d'enveloppe) que par le locataire (pour les équipements). Dans le cas d'un bail commercial, il est recommandé de définir contractuellement qui engage les démarches CEE pour éviter les doublons.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Peut-on cumuler plusieurs fiches CEE sur le même bâtiment ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Peut-on cumuler plusieurs fiches CEE sur le même bâtiment ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, les fiches CEE se cumulent. Un programme isolation toiture + PAC + GTB sur un même bâtiment donne droit à trois primes distinctes, calculées indépendamment. C'est le principe du bouquet de travaux, qui maximise les aides et les économies.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Quelle est la différence entre CEE classiques et CEE Coup de pouce ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Quelle est la différence entre CEE classiques et CEE Coup de pouce ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Les CEE classiques s'appliquent à toutes les fiches standardisées. Le Coup de pouce est une bonification spécifique sur certaines fiches (notamment BAT-TH-163 pour la PAC tertiaire) qui multiplie la prime par un coefficient défini dans un arrêté ministériel. Le Coup de pouce tertiaire est actuellement fixé à ×3 pour le remplacement d'une chaudière fossile.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Combien de temps faut-il pour recevoir la prime CEE ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Combien de temps faut-il pour recevoir la prime CEE ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Entre la fin des travaux et le versement de la prime, il faut généralement compter 1 à 3 mois. Ce délai correspond au temps de constitution du dossier de preuve et de contrôle par l'obligé. Certains obligés proposent des avances sur prime, notamment pour les opérations importantes.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Le prix de 8 €/MWh cumac est-il garanti ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Le prix de 8 €/MWh cumac est-il garanti ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Non. Le prix des CEE varie en fonction de l'offre et de la demande sur le marché. Le tarif de 8 €/MWh cumac est une estimation courante en période P6, mais certains obligés proposent des tarifs supérieurs selon les fiches et les volumes. Un mandataire CEE met en concurrence plusieurs obligés pour obtenir le meilleur taux.</p>
-      </div>
+      </details>
     </div>
 
     <div class="related">

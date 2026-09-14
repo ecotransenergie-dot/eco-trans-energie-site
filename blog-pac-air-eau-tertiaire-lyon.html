@@ -118,9 +118,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .inline-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#0F5132;background:#C9A86A;text-decoration:none;padding:13px 24px;border-radius:4px;white-space:nowrap;flex-shrink:0}
   .inline-cta a:hover{background:#d8ba80}
   .faq{margin-top:48px}.faq h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#0F5132;margin-bottom:24px}
-  .faq-item{border-bottom:1px solid rgba(15,81,50,.1);padding:20px 0}.faq-item:last-child{border-bottom:none}
-  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;margin-bottom:10px}
-  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A}
+  .faq-item{border-bottom:1px solid rgba(15,81,50,.1)}.faq-item:last-child{border-bottom:none}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .chev{flex-shrink:0;transition:transform .3s ease}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132}
+  .faq-a{font-size:15px;line-height:1.65;color:#4A4A4A;padding:0 0 18px}
   .related{padding:48px 0 80px;border-top:1px solid rgba(15,81,50,.1);margin-top:48px}
   .related h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:20px}
   .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -290,25 +294,25 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="faq">
       <h2>Questions fréquentes sur la PAC tertiaire</h2>
 
-      <div class="faq-item">
-        <p class="faq-q">Une PAC air/eau peut-elle aussi assurer le rafraîchissement en été ?</p>
+      <details class="faq-item" open>
+        <summary><span class="faq-q">Une PAC air/eau peut-elle aussi assurer le rafraîchissement en été ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Oui, les PAC air/eau réversibles assurent le chauffage en hiver et le rafraîchissement en été sur le même équipement. Pour le tertiaire, la réversibilité est souvent intégrée d'office dans les systèmes à eau glacée (plancher chauffant/rafraîchissant, cassettes). Cela améliore encore le retour sur investissement global.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Le Coup de pouce s'applique-t-il si je remplace une chaudière électrique ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Le Coup de pouce s'applique-t-il si je remplace une chaudière électrique ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Non. Le Coup de pouce tertiaire est réservé au remplacement de chaudières au gaz, au fioul ou au charbon. Le remplacement d'une chaudière électrique ou d'une ancienne PAC donne droit à la prime CEE standard (fiche BAT-TH-163 sans bonification).</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">Quel est le délai entre la demande et l'installation de la PAC ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">Quel est le délai entre la demande et l'installation de la PAC ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">En pratique : 2 à 4 semaines pour la convention CEE + devis validé, 4 à 12 semaines pour la livraison de l'équipement et la planification du chantier, 3 à 5 jours pour l'installation. Comptez 2 à 4 mois au total entre le premier contact et la mise en service.</p>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <p class="faq-q">La PAC air/eau suffit-elle seule pour atteindre l'objectif −40 % du Décret Tertiaire ?</p>
+      <details class="faq-item">
+        <summary><span class="faq-q">La PAC air/eau suffit-elle seule pour atteindre l'objectif −40 % du Décret Tertiaire ?</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <p class="faq-a">Dans la plupart des cas, oui pour les bâtiments principalement chauffés au gaz ou au fioul. Le passage d'une chaudière gaz à une PAC réduit typiquement la consommation d'énergie primaire de 40 à 60 %. Pour les bâtiments très énergivores ou dont l'enveloppe est peu isolée, un bouquet PAC + isolation toiture peut être nécessaire pour dépasser le seuil des −40 %.</p>
-      </div>
+      </details>
     </div>
 
     <div class="related">
