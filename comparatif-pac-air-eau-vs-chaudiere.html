@@ -237,6 +237,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   if(!form)return;
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
     var btn=form.querySelector('button');
     btn.disabled=true;
     btn.textContent='Envoi...';

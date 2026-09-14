@@ -1113,6 +1113,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     if(form){
       form.addEventListener('submit',function(e){
         e.preventDefault();
+        if(!form.checkValidity()){ form.reportValidity(); return; }
         var nom=(document.getElementById('fNom').value||'').trim();
         var prenom=nom?nom.split(' ')[0]:'';
         var data=Object.fromEntries(new FormData(form).entries());

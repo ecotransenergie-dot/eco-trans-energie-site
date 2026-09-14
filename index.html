@@ -1032,6 +1032,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     form.addEventListener('submit',function(e){
       e.preventDefault();
       if(errorMsg)errorMsg.style.display='none';
+      if(!form.checkValidity()){ form.reportValidity(); return; }
       if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Envoi en cours...';}
       var data=Object.fromEntries(new FormData(form).entries());
       var params=new URLSearchParams(window.location.search);
