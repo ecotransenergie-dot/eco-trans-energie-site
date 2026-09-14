@@ -380,11 +380,40 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
   var form=document.getElementById('pacForm');
   var errorMsg=document.getElementById('fformError');
+  var errorMsgDefaultHTML=errorMsg.innerHTML;
   var submitBtn=document.getElementById('submitBtn');
+
+  var telField=document.getElementById('telephone');
+  var telPattern=/^(0|\+33\s?)[1-9](\s?\d{2}){4}$/;
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
     errorMsg.style.display='none';
+
+    // Validation native (required, format email) : si un champ est invalide, on l'affiche et on stoppe
+    if(!form.checkValidity()){
+      goTo(5);
+      form.reportValidity();
+      return;
+    }
+
+    // Validation manuelle du telephone (type=tel n'impose pas de format par defaut)
+    var telVal=telField.value.trim();
+    if(!telPattern.test(telVal.replace(/[.\-]/g,''))){
+      goTo(5);
+      telField.setCustomValidity('Merci de saisir un numéro de téléphone français valide (ex. 06 12 34 56 78).');
+      telField.reportValidity();
+      telField.addEventListener('input',function clearCustom(){ telField.setCustomValidity(''); telField.removeEventListener('input',clearCustom); });
+      return;
+    }
+
+    // Verification que les 3 etapes qualifiantes ont bien ete repondues
+    if(!answers.statut || !answers.chauffage || !answers.revenus){
+      errorMsg.textContent='Merci de compléter toutes les étapes précédentes avant d\'envoyer votre demande.';
+      errorMsg.style.display='block';
+      return;
+    }
+
     submitBtn.disabled=true; submitBtn.textContent='Envoi en cours...';
 
     var params=new URLSearchParams(window.location.search);
@@ -419,6 +448,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       window.location.href='merci.html?'+q.toString();
     }).catch(function(){
       track('form_submit_error',{form_name:'landing_pac'});
+      errorMsg.innerHTML=errorMsgDefaultHTML;
       errorMsg.style.display='block';
       submitBtn.disabled=false; submitBtn.textContent='Recevoir mon estimation';
     });
