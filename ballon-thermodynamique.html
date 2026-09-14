@@ -121,6 +121,40 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .s-hero .eyebrow{color:#C9A86A}
   .btn-gold{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:#0F5132;background:#C9A86A;text-decoration:none;padding:16px 30px;border-radius:4px;display:inline-block;margin-top:30px}
   .btn-gold:hover{background:#d8ba80}
+
+  /* ===== FORMULAIRE HERO MULTI-ETAPES (identique homepage, adapte a la solution) ===== */
+  .hero-form-wrap{align-self:center;padding:40px 0;position:relative;z-index:2}
+  .form-card{background:#fff;border-radius:12px;box-shadow:0 20px 60px -15px rgba(8,42,27,.45);padding:30px 30px 26px}
+  .progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .progress-track{flex:1;height:6px;background:#F0EBE0;border-radius:99px;margin-right:14px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#C9A86A,#0F5132);border-radius:99px;width:20%;transition:width .35s ease}
+  .progress-pct{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#0F5132;white-space:nowrap}
+  .fstep{display:none}
+  .fstep.active{display:block;animation:fadein .25s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .fstep h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:16px;line-height:1.3}
+  .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .opt-grid.single{grid-template-columns:1fr}
+  .opt-card{border:1.5px solid #E5E0D5;border-radius:8px;padding:18px 14px;text-align:center;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+  .opt-card:hover{border-color:#C9A86A}
+  .opt-card.selected{border-color:#0F5132;background:#F5F0E8}
+  .opt-card .oi{font-size:26px;margin-bottom:8px}
+  .opt-card .ol{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;color:#0F5132}
+  .opt-card .os{font-size:11px;color:#8A8A8A;margin-top:2px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12.5px;color:#0F5132;margin-bottom:6px}
+  .field input{width:100%;padding:13px 14px;border:1.5px solid #E5E0D5;border-radius:6px;font-size:15px;font-family:inherit;color:#2a2a2a}
+  .field input:focus{outline:none;border-color:#C9A86A}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+  .consent input{margin-top:3px;flex-shrink:0}
+  .consent label{font-size:11.5px;line-height:1.5;color:#7a7568}
+  .consent a{color:#0F5132;text-decoration:underline}
+  .fnav{display:flex;gap:10px;margin-top:20px}
+  .btn-back{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;color:#8A8A8A;background:transparent;border:none;padding:13px 8px;cursor:pointer}
+  .btn-next{flex:1;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:#0F5132;background:#C9A86A;border:none;border-radius:6px;padding:15px 18px;cursor:pointer;transition:background .15s}
+  .btn-next:hover{background:#d8ba80}
+  .note-elig{font-size:11.5px;color:#8A8A8A;margin-top:10px;line-height:1.5}
+  .fform-error{display:none;color:#B3261E;font-size:13px;margin-top:10px;text-align:center}
   .s-hero-visual{position:relative;padding:40px 0}
   .ph-placeholder{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.4);aspect-ratio:4/3.3;background:linear-gradient(135deg,#144a30 0%,#082A1B 100%);display:flex;align-items:flex-end}
   .ph-placeholder::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.045) 0 2px,transparent 2px 14px)}
@@ -161,7 +195,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .ctaband p{font-size:14.5px;color:rgba(245,240,232,.7);margin-top:10px}
 
   .site-footer{background:#0F5132;border-top:1px solid #C9A86A}
-  .footer-grid{max-width:1240px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:40px}
+  .footer-grid{max-width:1240px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:1.4fr 1fr 1.1fr;gap:40px}
   .footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px}
   .footer-brand img{width:44px;height:44px;border-radius:50%;flex-shrink:0}
   .footer-brand span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.5px;color:#fff}
@@ -213,7 +247,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <a class="nav-link active" href="ballon-thermodynamique.html">Ballon thermo.</a>
         <a class="nav-link" href="partenaires.html">Partenaires</a>
         <a class="nav-link" href="simulateur.html">Simulateur</a>
-        <a class="cta-gold" href="index.html#formulaire-devis">Audit gratuit</a>
+        <a class="cta-gold" href="#formulaire">Audit gratuit</a>
       </nav>
       <label class="burger" for="nav-toggle" aria-label="Ouvrir le menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
@@ -224,7 +258,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       <a class="active" href="ballon-thermodynamique.html">Ballon thermodynamique</a>
       <a href="partenaires.html">Partenaires</a>
       <a href="simulateur.html">Simulateur</a>
-      <a class="mcta" href="index.html#formulaire-devis">Audit gratuit</a>
+      <a class="mcta" href="#formulaire">Audit gratuit</a>
     </nav>
   </header>
 
@@ -243,13 +277,73 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <span class="eyebrow mont">Solution 3 / 4 · Eau chaude sanitaire</span>
         <h1 style="margin-top:14px">Ballon thermodynamique à Lyon et sa Métropole</h1>
         <p class="lead">Remplacez votre ballon d'eau chaude classique par un modèle qui utilise les calories de l'air ambiant pour chauffer l'eau. Ne fait pas partie de l'offre de lancement PAC air/eau, se chiffre séparément.</p>
-        <a class="btn-gold" href="index.html#formulaire-devis">Vérifier mon éligibilité →</a>
+        <a class="btn-gold" href="#formulaire">Vérifier mon éligibilité →</a>
       </div>
-      <div class="s-hero-visual">
-        <div class="ph-placeholder"><span>Photo à venir : ballon thermodynamique installé</span></div>
-        <div class="quick-card">
-          <div><div class="qc-n">60%</div><div class="qc-l">Économie jusqu'à sur l'ECS</div></div>
-          <div><div class="qc-n">48h</div><div class="qc-l">Diagnostic sous</div></div>
+      <div class="hero-form-wrap">
+        <div class="form-card" id="formulaire">
+          <div class="progress-row">
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+            <span class="progress-pct" id="progressPct">20 %</span>
+          </div>
+          <form id="pacForm" novalidate>
+            <div class="fstep active" data-step="1">
+              <h2>Vous êtes ?</h2>
+              <div class="opt-grid" data-field="statut">
+                <div class="opt-card" data-value="proprietaire"><div class="oi">🏠</div><div class="ol">Propriétaire</div></div>
+                <div class="opt-card" data-value="locataire"><div class="oi">🔑</div><div class="ol">Locataire</div><div class="os">non éligible aux aides</div></div>
+              </div>
+              <p class="note-elig">Les aides de l'État (MaPrimeRénov', CEE) sont réservées aux propriétaires. Si vous êtes locataire, nous pouvons tout de même vous conseiller.</p>
+            </div>
+            <div class="fstep" data-step="2">
+              <h2>Quel est votre chauffage actuel ?</h2>
+              <div class="opt-grid" data-field="chauffage">
+                <div class="opt-card" data-value="gaz"><div class="oi">🔥</div><div class="ol">Gaz</div></div>
+                <div class="opt-card" data-value="fioul"><div class="oi">🛢️</div><div class="ol">Fioul</div></div>
+                <div class="opt-card" data-value="electrique"><div class="oi">⚡</div><div class="ol">Électrique</div></div>
+                <div class="opt-card" data-value="autre"><div class="oi">❓</div><div class="ol">Autre</div></div>
+              </div>
+              <div class="fnav"><button type="button" class="btn-back" data-back>← Retour</button></div>
+            </div>
+            <div class="fstep" data-step="3">
+              <h2>Votre profil de revenus (pour estimer vos aides)</h2>
+              <div class="opt-grid single" data-field="revenus">
+                <div class="opt-card" data-value="tres_modeste"><div class="ol">Très modeste</div></div>
+                <div class="opt-card" data-value="modeste"><div class="ol">Modeste</div></div>
+                <div class="opt-card" data-value="intermediaire"><div class="ol">Intermédiaire</div></div>
+                <div class="opt-card" data-value="superieur"><div class="ol">Supérieur</div></div>
+                <div class="opt-card" data-value="ne_sait_pas"><div class="ol">Je ne sais pas</div></div>
+              </div>
+              <div class="fnav"><button type="button" class="btn-back" data-back>← Retour</button></div>
+            </div>
+            <div class="fstep" data-step="4">
+              <h2>Où se situe votre logement ?</h2>
+              <div class="field"><label for="ville">Ville</label><input type="text" id="ville" name="ville" placeholder="Ex. Lyon, Villeurbanne, Meyzieu..." required></div>
+              <div class="field"><label for="cp">Code postal</label><input type="text" id="cp" name="code_postal" inputmode="numeric" placeholder="69000" required></div>
+              <div class="fnav">
+                <button type="button" class="btn-back" data-back>← Retour</button>
+                <button type="button" class="btn-next" data-next="5">Continuer</button>
+              </div>
+            </div>
+            <div class="fstep" data-step="5">
+              <h2>Vos coordonnées</h2>
+              <div class="field"><label for="nom">Nom et prénom</label><input type="text" id="nom" name="nom" required></div>
+              <div class="field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" required></div>
+              <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+              <div class="consent">
+                <input type="checkbox" id="consent1" required>
+                <label for="consent1">J'accepte que mes données soient traitées par Eco Trans'Energie pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialité" target="_blank">politique de confidentialité</a>.</label>
+              </div>
+              <div class="consent">
+                <input type="checkbox" id="consent2" required>
+                <label for="consent2">J'accepte d'être recontacté(e) par Eco Trans'Energie et, le cas échéant, par un installateur partenaire certifié RGE.</label>
+              </div>
+              <div class="fnav">
+                <button type="button" class="btn-back" data-back>← Retour</button>
+                <button type="submit" class="btn-next" id="submitBtn">Recevoir mon estimation</button>
+              </div>
+              <p class="fform-error" id="fformError">L'envoi a échoué. Réessayez ou appelez-nous au <a href="tel:+33482533165" style="color:inherit;text-decoration:underline">04 82 53 31 65</a>.</p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -309,7 +403,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <h2>Votre projet de ballon thermodynamique — devis gratuit</h2>
         <p>Diagnostic gratuit, aides calculées, installateur RGE supervisé.</p>
       </div>
-      <a class="btn-gold" href="index.html#formulaire-devis">Demander mon devis gratuit</a>
+      <a class="btn-gold" href="#formulaire">Demander mon devis gratuit</a>
     </div>
   </section>
 
@@ -331,31 +425,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="ballon-thermodynamique.html">Ballon thermodynamique</a></li>
-          <li><a href="simulateur.html">Simulateur d'économies</a></li>
-          <li><a href="guide-aides-financieres-2026.html">Guide des aides 2026</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li class="footer-sep"><a href="partenaires.html">Partenaires</a></li>
-          <li><a href="professionnels.html">Professionnels &amp; Tertiaire</a></li>
+          <li><a href="index.html#services">Nos services</a></li>
+          <li><a href="index.html#process">Comment ça marche</a></li>
+          <li><a href="index.html#aides">Aides 2026</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
           <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="pompe-a-chaleur.html">Pompe à chaleur</a></li>
-          <li><a href="isolation-thermique.html">Isolation</a></li>
-          <li><a href="ballon-thermodynamique.html">Ballon thermodynamique</a></li>
-          <li>VMC</li>
-          <li>Panneaux solaires</li>
-        </ul>
-        <h4 style="margin-top:22px">Nos zones</h4>
-        <ul>
-          <li><a href="pompe-a-chaleur-lyon.html">Lyon</a></li>
-          <li><a href="pompe-a-chaleur-villeurbanne.html">Villeurbanne</a></li>
-          <li><a href="pompe-a-chaleur-venissieux.html">Vénissieux</a></li>
-          <li><a href="pompe-a-chaleur-bron.html">Bron</a></li>
-          <li><a href="pompe-a-chaleur-caluire.html">Caluire-et-Cuire</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -378,5 +452,130 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   </footer>
 
   <script>document.querySelectorAll(".mobile-nav a").forEach(function(a){a.addEventListener("click",function(){var cb=document.getElementById("nav-toggle");if(cb)cb.checked=false;});});</script>
+
+<!-- FORMULAIRE HERO MULTI-ETAPES (full funnel, page solution) -->
+<script>
+(function(){
+  function track(name,params){ if(typeof gtag==='function') gtag('event', name, params||{}); }
+  track('form_view',{form_name:'ballon_thermo_hero'});
+
+  var currentStep=1;
+  var totalSteps=5;
+  var answers={};
+  var startedTracked=false;
+
+  var steps=document.querySelectorAll('#pacForm .fstep');
+  var progressFill=document.getElementById('progressFill');
+  var progressPct=document.getElementById('progressPct');
+  if(!steps.length) return;
+
+  function goTo(step){
+    steps.forEach(function(s){ s.classList.toggle('active', parseInt(s.getAttribute('data-step'),10)===step); });
+    currentStep=step;
+    var pct=Math.round((step/totalSteps)*100);
+    progressFill.style.width=pct+'%';
+    progressPct.textContent=pct+' %';
+  }
+
+  document.querySelectorAll('#pacForm .opt-grid').forEach(function(grid){
+    var field=grid.getAttribute('data-field');
+    grid.querySelectorAll('.opt-card').forEach(function(card){
+      card.addEventListener('click',function(){
+        if(!startedTracked){ track('form_start',{form_name:'ballon_thermo_hero'}); startedTracked=true; }
+        grid.querySelectorAll('.opt-card').forEach(function(c){c.classList.remove('selected');});
+        card.classList.add('selected');
+        answers[field]=card.getAttribute('data-value');
+        track('form_step',{form_name:'ballon_thermo_hero',field:field,value:answers[field]});
+        setTimeout(function(){ if(currentStep<4) goTo(currentStep+1); },220);
+      });
+    });
+  });
+
+  document.querySelectorAll('#pacForm [data-back]').forEach(function(btn){
+    btn.addEventListener('click',function(){ if(currentStep>1) goTo(currentStep-1); });
+  });
+
+  document.querySelectorAll('#pacForm [data-next]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var step4=document.querySelector('#pacForm .fstep[data-step="4"]');
+      if(step4.classList.contains('active')){
+        var ville=document.getElementById('ville').value.trim();
+        var cp=document.getElementById('cp').value.trim();
+        if(!ville||!cp){ document.getElementById('ville').reportValidity(); return; }
+        answers.ville=ville; answers.code_postal=cp;
+      }
+      goTo(parseInt(btn.getAttribute('data-next'),10));
+    });
+  });
+
+  var form=document.getElementById('pacForm');
+  var errorMsg=document.getElementById('fformError');
+  var errorMsgDefaultHTML=errorMsg.innerHTML;
+  var submitBtn=document.getElementById('submitBtn');
+  var telField=document.getElementById('telephone');
+  var telPattern=/^(0|\+33\s?)[1-9](\s?\d{2}){4}$/;
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    errorMsg.style.display='none';
+
+    if(!form.checkValidity()){ goTo(5); form.reportValidity(); return; }
+
+    var telVal=telField.value.trim();
+    if(!telPattern.test(telVal.replace(/[.\-]/g,''))){
+      goTo(5);
+      telField.setCustomValidity('Merci de saisir un numero de telephone francais valide (ex. 06 12 34 56 78).');
+      telField.reportValidity();
+      telField.addEventListener('input',function clearCustom(){ telField.setCustomValidity(''); telField.removeEventListener('input',clearCustom); });
+      return;
+    }
+
+    if(!answers.statut || !answers.chauffage || !answers.revenus){
+      errorMsg.textContent="Merci de completer toutes les etapes precedentes avant d'envoyer votre demande.";
+      errorMsg.style.display='block';
+      return;
+    }
+
+    submitBtn.disabled=true; submitBtn.textContent='Envoi en cours...';
+
+    var params=new URLSearchParams(window.location.search);
+    var data={
+      nom:document.getElementById('nom').value,
+      telephone:document.getElementById('telephone').value,
+      email:document.getElementById('email').value,
+      ville:answers.ville||'',
+      code_postal:answers.code_postal||'',
+      statut_occupation:answers.statut||'',
+      energie_actuelle:answers.chauffage||'',
+      profil_revenus:answers.revenus||'',
+      type_projet:'Ballon thermodynamique',
+      subject:'Nouveau lead - Page Ballon thermodynamique',
+      access_key:'df0e5977-4754-4637-b232-f70e6cffe41f'
+    };
+    data.source=params.get('utm_source')?params.get('utm_source')+(params.get('utm_campaign')?'-'+params.get('utm_campaign'):''):'ballon-thermo-hero';
+
+    track('form_submit_attempt',{form_name:'ballon_thermo_hero'});
+
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(res){return res.json();})
+    .then(function(json){
+      if(!json||json.success!==true) throw new Error('Web3Forms a refuse la demande');
+      if(typeof fbq==='function') fbq('track','Lead');
+      track('generate_lead',{form_name:'ballon_thermo_hero'});
+      track('form_submit_success',{form_name:'ballon_thermo_hero'});
+      var q=new URLSearchParams({profil:answers.revenus||'',chauffage:answers.chauffage||'',statut:answers.statut||''});
+      window.location.href='merci.html?'+q.toString();
+    }).catch(function(){
+      track('form_submit_error',{form_name:'ballon_thermo_hero'});
+      errorMsg.innerHTML=errorMsgDefaultHTML;
+      errorMsg.style.display='block';
+      submitBtn.disabled=false; submitBtn.textContent='Recevoir mon estimation';
+    });
+  });
+})();
+</script>
 </body>
 </html>
