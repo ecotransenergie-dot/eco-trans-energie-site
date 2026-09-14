@@ -109,10 +109,18 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .mobile-nav a.active{color:#0F5132!important}
   .nav-toggle:checked ~ .mobile-nav{display:flex}
 
+  /* ---------- Bandeau réassurance (V2) ---------- */
+  .reassure-bar{position:sticky;top:84px;z-index:49;background:#082A1B}
+  .reassure-row{display:flex;justify-content:center;gap:36px;padding:9px 40px;flex-wrap:wrap;max-width:1240px;margin:0 auto}
+  .reassure-row span{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.3px;color:rgba(255,255,255,.9)}
+  .reassure-row span svg{flex:none;width:15px;height:15px;color:#C9A86A}
+  @media(max-width:1040px){.reassure-bar{display:none}}
+
   /* ---------- Hero ---------- */
-  .hero{background:#0F5132}
-  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;min-height:580px}
-  .hero-copy{padding:74px 0}
+  .hero{background:#0F5132;position:relative;overflow:hidden}
+  .hero-bg-tint{position:absolute;inset:0;background:radial-gradient(50% 60% at 82% 15%,rgba(201,168,106,.14),transparent 60%);pointer-events:none}
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:stretch;min-height:580px}
+  .hero-copy{padding:74px 0;position:relative;z-index:2}
   .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(201,168,106,.5);border-radius:40px;padding:7px 16px;margin-bottom:28px}
   .badge span.dot{width:7px;height:7px;border-radius:50%;background:#C9A86A}
   .badge span.txt{font-weight:600;font-size:12px;letter-spacing:1.5px;color:#C9A86A;text-transform:uppercase}
@@ -124,9 +132,51 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .btn-gold{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:#0F5132;background:#C9A86A;text-decoration:none;padding:17px 32px;border-radius:4px}
   .btn-gold:hover{background:#d8ba80}
   .link-under{font-weight:600;font-size:16px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px}
-  .hero-media{padding:48px 0}
-  .hero-media .ph{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);aspect-ratio:4/3.5}
-  .hero-media .ph svg{width:100%;height:100%;display:block}
+  .chart-panel{position:relative;align-self:center;background:#082A1B;border-radius:10px;padding:32px 32px 24px;box-shadow:0 40px 90px -30px rgba(8,42,27,.55);z-index:2;margin:48px 0}
+  .chart-panel .cp-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+  .chart-panel .cp-head b{color:#fff;font-family:'Montserrat',sans-serif;font-size:14.5px;font-weight:700}
+  .chart-panel .cp-head span{color:#EAD3A0;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  #heroChart{width:100%;height:220px;display:block}
+
+  /* ===== FORMULAIRE HERO MULTI-ÉTAPES ===== */
+  .hero-form-wrap{align-self:center;margin:48px 0;position:relative;z-index:2}
+  .form-card{background:#fff;border-radius:12px;box-shadow:0 20px 60px -15px rgba(8,42,27,.45);padding:30px 30px 26px}
+  .progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .progress-track{flex:1;height:6px;background:#F0EBE0;border-radius:99px;margin-right:14px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#C9A86A,#0F5132);border-radius:99px;width:20%;transition:width .35s ease}
+  .progress-pct{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#0F5132;white-space:nowrap}
+  .fstep{display:none}
+  .fstep.active{display:block;animation:fadein .25s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .fstep h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#0F5132;margin-bottom:16px;line-height:1.3}
+  .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .opt-grid.single{grid-template-columns:1fr}
+  .opt-card{border:1.5px solid #E5E0D5;border-radius:8px;padding:18px 14px;text-align:center;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+  .opt-card:hover{border-color:#C9A86A}
+  .opt-card.selected{border-color:#0F5132;background:#F5F0E8}
+  .opt-card .oi{font-size:26px;margin-bottom:8px}
+  .opt-card .ol{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;color:#0F5132}
+  .opt-card .os{font-size:11px;color:#8A8A8A;margin-top:2px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12.5px;color:#0F5132;margin-bottom:6px}
+  .field input{width:100%;padding:13px 14px;border:1.5px solid #E5E0D5;border-radius:6px;font-size:15px;font-family:inherit;color:#2a2a2a}
+  .field input:focus{outline:none;border-color:#C9A86A}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+  .consent input{margin-top:3px;flex-shrink:0}
+  .consent label{font-size:11.5px;line-height:1.5;color:#7a7568}
+  .consent a{color:#0F5132;text-decoration:underline}
+  .fnav{display:flex;gap:10px;margin-top:20px}
+  .btn-back{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;color:#8A8A8A;background:transparent;border:none;padding:13px 8px;cursor:pointer}
+  .btn-next{flex:1;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:#0F5132;background:#C9A86A;border:none;border-radius:6px;padding:15px 18px;cursor:pointer;transition:background .15s}
+  .btn-next:hover{background:#d8ba80}
+  .note-elig{font-size:11.5px;color:#8A8A8A;margin-top:10px;line-height:1.5}
+  .fform-error{display:none;color:#B3261E;font-size:13px;margin-top:10px;text-align:center}
+  .cp-legend{display:flex;gap:22px;margin-top:14px}
+  .cp-legend div{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.75)}
+  .cp-legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+  .cp-foot{display:flex;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+  .cp-foot div .n{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff}
+  .cp-foot div .l{font-size:11px;color:rgba(255,255,255,.55);margin-top:2px}
 
   /* ---------- Chiffres ---------- */
   .chiffres-sec{background:#F5F0E8;border-top:1px solid #C9A86A;border-bottom:1px solid #C9A86A}
@@ -140,11 +190,45 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .services{background:#F5F0E8;padding:88px 0}
   .sec-head{max-width:760px;margin-bottom:48px}
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{background:#fff;border-radius:6px;padding:32px 28px;box-shadow:0 4px 18px rgba(15,81,50,.07);border:1px solid rgba(15,81,50,.05);display:flex;flex-direction:column;gap:16px}
+  .card{background:#fff;border-radius:6px;padding:32px 28px;box-shadow:0 4px 18px rgba(15,81,50,.07);border:1px solid rgba(15,81,50,.05);display:flex;flex-direction:column;gap:16px;text-decoration:none;transition:box-shadow .2s,transform .2s}
+  a.card:hover{box-shadow:0 10px 28px rgba(15,81,50,.14);transform:translateY(-2px)}
   .card .ic{width:54px;height:54px;border-radius:8px;background:rgba(201,168,106,.14);display:flex;align-items:center;justify-content:center}
   .card h3{font-family:'Montserrat',sans-serif;font-weight:600;font-size:19px;color:#0F5132;line-height:1.25}
   .card p{font-weight:400;font-size:16px;line-height:1.62;color:#4A4A4A}
   .card .tag{font-weight:600;font-size:13px;color:#C9A86A;margin-top:auto}
+
+  /* ---------- Carrousel solutions (V2, page aérée) ---------- */
+  .solutions-carousel{background:#F5F0E8;padding:56px 0 64px}
+  .solutions-carousel .sec-head{margin-bottom:28px}
+  .sol-zone{font-size:13.5px;color:#7A7A7A;margin-top:8px}
+  .sol-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 14px;margin:0 -4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#C9A86A transparent}
+  .sol-track::-webkit-scrollbar{height:6px}
+  .sol-track::-webkit-scrollbar-thumb{background:#C9A86A;border-radius:3px}
+  .sol-card{scroll-snap-align:start;flex:0 0 208px;background:#fff;border-radius:8px;padding:22px 18px;box-shadow:0 4px 18px rgba(15,81,50,.07);border:1px solid rgba(15,81,50,.05);display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:box-shadow .2s,transform .2s}
+  a.sol-card:hover{box-shadow:0 10px 28px rgba(15,81,50,.14);transform:translateY(-2px)}
+  .sol-card .ic{width:44px;height:44px;border-radius:8px;background:rgba(201,168,106,.14);display:flex;align-items:center;justify-content:center}
+  .sol-card h3{font-family:'Montserrat',sans-serif;font-weight:600;font-size:15.5px;color:#0F5132;line-height:1.25}
+  .sol-card .sol-tag{font-weight:600;font-size:12px;color:#C9A86A}
+  @media(max-width:640px){.sol-card{flex:0 0 168px;padding:18px 14px}}
+
+  /* ---------- Transparence ---------- */
+  .transparence{background:#fff;padding:72px 0}
+  .transp-intro{font-size:16px;line-height:1.6;color:#4A4A4A;max-width:640px;margin-top:10px}
+  .transp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
+  .transp-item{border-left:2px solid #C9A86A;padding-left:16px;display:flex;flex-direction:column;gap:5px}
+  .transp-k{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;color:#0F5132;line-height:1.3}
+  .transp-v{font-size:13px;color:#7A7A7A;line-height:1.4}
+  @media(max-width:900px){.transp-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.transp-grid{grid-template-columns:1fr}}
+
+  /* ---------- Galerie illustration ---------- */
+  .gallery-illu{background:#fff;padding:72px 0}
+  .gallery-illu .illu-caption{font-size:13px;color:#8A8A8A;font-style:italic;margin-top:8px}
+  .illu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .illu-grid figure{margin:0;border-radius:8px;overflow:hidden;box-shadow:0 8px 30px rgba(15,81,50,.10)}
+  .illu-grid img{width:100%;height:340px;object-fit:cover;display:block}
+  .illu-grid figcaption{padding:14px 18px;font-size:13.5px;color:#4A4A4A;background:#F5F0E8}
+  @media(max-width:700px){.illu-grid{grid-template-columns:1fr}}
 
   /* ---------- Process ---------- */
   .process{background:#0F5132;padding:88px 0}
@@ -230,9 +314,20 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .contact-tel{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#0F5132;text-decoration:none}
   .contact-note{font-weight:300;font-size:13px;color:#0F5132}
 
+  /* ---------- CTA fin de page (renvoie vers formulaire hero) ---------- */
+  .cta-bottom{background:#0F5132;padding:64px 0}
+  .cta-bottom-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  .cta-bottom h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:29px;color:#C9A86A;line-height:1.2;letter-spacing:-.3px;text-wrap:balance}
+  .cta-bottom p{font-weight:400;font-size:15.5px;line-height:1.55;color:rgba(245,240,232,.85);margin-top:12px}
+  .cta-bottom-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .cta-bottom-actions .btn-gold{text-align:center}
+  .cta-bottom-tel{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;color:#fff;text-decoration:none}
+  .cta-bottom-note{font-weight:300;font-size:13px;color:rgba(245,240,232,.6)}
+  @media(max-width:760px){.cta-bottom-inner{grid-template-columns:1fr}}
+
   /* ---------- Footer ---------- */
   .site-footer{background:#0F5132;border-top:1px solid #C9A86A}
-  .footer-grid{max-width:1240px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:40px}
+  .footer-grid{max-width:1240px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:1.4fr 1fr 1.1fr;gap:40px}
   .footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px}
   .footer-brand img{width:44px;height:44px;border-radius:50%;flex-shrink:0}
   .footer-brand span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.5px;color:#fff}
@@ -261,9 +356,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     .stat{border-right:none}
     .grid-2{grid-template-columns:1fr;gap:40px}
     .footer-grid{grid-template-columns:1fr 1fr;row-gap:40px}
-    .hero-grid{grid-template-columns:1fr;gap:0}
-    .hero-media{display:none}
+    .hero-inner{grid-template-columns:1fr;gap:0}
+    .chart-panel{display:none}
     .contact-inner{grid-template-columns:1fr;gap:40px}
+    .se .two-col{grid-template-columns:1fr}
+    .se .profil-grid,.se .sol-grid{grid-template-columns:1fr}
   }
   @media (max-width:767px){
     /* single column everywhere */
@@ -294,7 +391,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .se{} /* scope wrapper – rules prefixed .se */
   .se .hidden{display:none!important}
   .se .full{grid-column:1/-1}
-  .se .two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .se .two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
   .se .panel{background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(15,81,50,.10);padding:30px;border:1px solid rgba(15,81,50,.05)}
   .se .panel h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;color:#0F5132;margin-bottom:20px;padding-bottom:11px;border-bottom:2px solid #C9A86A}
   .se .field{margin-bottom:18px}
@@ -365,10 +462,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   .se .sim-disclaimer{font-size:12px;color:#8A8A8A;line-height:1.55;text-align:center;padding:16px 0 0}
   .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#0F5132;box-shadow:0 -6px 20px rgba(0,0,0,.18);display:flex;align-items:stretch;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
   .sticky-cta a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-decoration:none;border-radius:4px;padding:12px 6px;text-align:center;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;justify-content:center}
-  .sticky-cta .sc-devis{flex:1.3}
-  .sticky-cta .sc-tel{flex:1}
+  .sticky-cta .sc-devis{flex:1.2}
+  .sticky-cta .sc-tel{flex:.9}
+  .sticky-cta .sc-whatsapp{flex:.9}
   .sticky-cta .sc-devis{background:#C9A86A;color:#0F5132}
   .sticky-cta .sc-tel{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  .sticky-cta .sc-whatsapp{background:#25D366;color:#0F5132}
   body{padding-bottom:64px}
   @media(min-width:900px){.sticky-cta{display:none}body{padding-bottom:0}}
 </style>
@@ -411,23 +510,96 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     </nav>
   </header>
 
+  <!-- ============ BANDEAU RÉASSURANCE ============ -->
+  <div class="reassure-bar">
+    <div class="wrap reassure-row">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10"/><path d="M20 21V10"/><path d="M9 21V10"/><path d="M15 21V10"/><path d="M2 10l10-6 10 6"/></svg>Tiers-payant aides de l'État</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>Installateurs RGE partenaires</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4.5 4.5 0 100 7"/><path d="M7.5 10.5h6M7.5 13.5h5"/></svg>Reste à charge dès 1 000 €</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-9 9H6v-6l9-9z"/><path d="M3 21h6"/></svg>0 € à la signature</span>
+    </div>
+  </div>
+
   <!-- ============ HERO ============ -->
   <section id="hero" class="hero">
-    <div class="wrap hero-grid">
+    <div class="hero-bg-tint"></div>
+    <div class="wrap hero-inner">
       <div class="hero-copy">
         <div class="badge"><span class="dot"></span><span class="txt">Un seul interlocuteur, du diagnostic au chantier fini</span></div>
         <h1 class="h1">Pompe à chaleur air/eau clé en main à Lyon et sa Métropole — reste à charge <span class="gold">à partir de 1 000 €</span> avec CEE et Ma Prime Rénov</h1>
         <p class="hero-tag">Un seul interlocuteur du diagnostic au chantier fini · Isolation, VMC, ballon thermodynamique, photovoltaïque aussi disponibles</p>
         <p class="hero-lead">Eco Trans'Énergie accompagne les propriétaires de maison individuelle à Lyon, Villeurbanne, Vénissieux, Bron, Caluire et toute la Métropole dans leur projet de pompe à chaleur air/eau. Contrairement à un simple installateur, nous restons votre unique interlocuteur : chiffrage, dossier CEE et Ma Prime Rénov, coordination de l'installateur RGE, suivi du chantier jusqu'à la fin. Isolation, ballon thermodynamique, VMC et panneaux solaires disponibles en complément. Votre reste à charge : à partir de 1 000 €.</p>
         <div class="hero-actions">
-          <a class="btn-gold" href="simulateur.html">Calculer mes aides maintenant</a>
+          <a class="btn-gold" href="#formulaire">Obtenir mon estimation gratuite</a>
           <a class="link-under" href="#temoignages">Voir nos garanties →</a>
         </div>
         <p style="color:rgba(255,255,255,.6);font-size:13px;margin-top:14px">Montant indicatif selon vos revenus et votre logement, confirmé après étude gratuite.</p>
       </div>
-      <div class="hero-media">
-        <div class="ph">
-          <img src="assets/hero-pac.jpg" alt="Installation pompe à chaleur air/eau Lyon — Eco Trans'Énergie" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:6px">
+      <div class="hero-form-wrap">
+        <div class="form-card" id="formulaire">
+          <div class="progress-row">
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+            <span class="progress-pct" id="progressPct">20 %</span>
+          </div>
+          <form id="pacForm" novalidate>
+            <div class="fstep active" data-step="1">
+              <h2>Vous êtes ?</h2>
+              <div class="opt-grid" data-field="statut">
+                <div class="opt-card" data-value="proprietaire"><div class="oi">🏠</div><div class="ol">Propriétaire</div></div>
+                <div class="opt-card" data-value="locataire"><div class="oi">🔑</div><div class="ol">Locataire</div><div class="os">non éligible aux aides</div></div>
+              </div>
+              <p class="note-elig">Les aides de l'État (MaPrimeRénov', CEE) sont réservées aux propriétaires. Si vous êtes locataire, nous pouvons tout de même vous conseiller.</p>
+            </div>
+            <div class="fstep" data-step="2">
+              <h2>Quel est votre chauffage actuel ?</h2>
+              <div class="opt-grid" data-field="chauffage">
+                <div class="opt-card" data-value="gaz"><div class="oi">🔥</div><div class="ol">Gaz</div></div>
+                <div class="opt-card" data-value="fioul"><div class="oi">🛢️</div><div class="ol">Fioul</div></div>
+                <div class="opt-card" data-value="electrique"><div class="oi">⚡</div><div class="ol">Électrique</div></div>
+                <div class="opt-card" data-value="autre"><div class="oi">❓</div><div class="ol">Autre</div></div>
+              </div>
+              <div class="fnav"><button type="button" class="btn-back" data-back>← Retour</button></div>
+            </div>
+            <div class="fstep" data-step="3">
+              <h2>Votre profil de revenus (pour estimer vos aides)</h2>
+              <div class="opt-grid single" data-field="revenus">
+                <div class="opt-card" data-value="tres_modeste"><div class="ol">Très modeste</div></div>
+                <div class="opt-card" data-value="modeste"><div class="ol">Modeste</div></div>
+                <div class="opt-card" data-value="intermediaire"><div class="ol">Intermédiaire</div></div>
+                <div class="opt-card" data-value="superieur"><div class="ol">Supérieur</div></div>
+                <div class="opt-card" data-value="ne_sait_pas"><div class="ol">Je ne sais pas</div></div>
+              </div>
+              <div class="fnav"><button type="button" class="btn-back" data-back>← Retour</button></div>
+            </div>
+            <div class="fstep" data-step="4">
+              <h2>Où se situe votre logement ?</h2>
+              <div class="field"><label for="ville">Ville</label><input type="text" id="ville" name="ville" placeholder="Ex. Lyon, Villeurbanne, Meyzieu..." required></div>
+              <div class="field"><label for="cp">Code postal</label><input type="text" id="cp" name="code_postal" inputmode="numeric" placeholder="69000" required></div>
+              <div class="fnav">
+                <button type="button" class="btn-back" data-back>← Retour</button>
+                <button type="button" class="btn-next" data-next="5">Continuer</button>
+              </div>
+            </div>
+            <div class="fstep" data-step="5">
+              <h2>Vos coordonnées</h2>
+              <div class="field"><label for="nom">Nom et prénom</label><input type="text" id="nom" name="nom" required></div>
+              <div class="field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" required></div>
+              <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+              <div class="consent">
+                <input type="checkbox" id="consent1" required>
+                <label for="consent1">J'accepte que mes données soient traitées par Eco Trans'Énergie pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite" target="_blank">politique de confidentialité</a>.</label>
+              </div>
+              <div class="consent">
+                <input type="checkbox" id="consent2" required>
+                <label for="consent2">J'accepte d'être recontacté(e) par Eco Trans'Énergie et, le cas échéant, par un installateur partenaire certifié RGE.</label>
+              </div>
+              <div class="fnav">
+                <button type="button" class="btn-back" data-back>← Retour</button>
+                <button type="submit" class="btn-next" id="submitBtn">Recevoir mon estimation</button>
+              </div>
+              <p class="fform-error" id="fformError">L'envoi a échoué. Réessayez ou appelez-nous au <a href="tel:+33482533165" style="color:inherit;text-decoration:underline">04 82 53 31 65</a>.</p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -443,44 +615,60 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     </div>
   </section>
 
-  <!-- ============ SERVICES ============ -->
-  <section id="services" class="services">
+  <!-- ============ SOLUTIONS (carrousel) ============ -->
+  <section id="services" class="solutions-carousel">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Nos services</span>
-        <h2 class="h2">Nos solutions de rénovation énergétique à Lyon et sa Métropole</h2>
+        <span class="eyebrow">Nos solutions</span>
+        <h2 class="h2">Rénovation énergétique à Lyon et sa Métropole</h2>
+        <p class="sol-zone">Villeurbanne, Vénissieux, Bron, Caluire, Décines, Rillieux et toute la Métropole</p>
       </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3c2.4 2.6 3.6 4.4 3.6 6.3A3.6 3.6 0 0 1 7.4 9.6C7.4 7.7 8.6 5.8 11 3Z"/><path d="M17 13.5a3.5 3.5 0 1 1-5 0c0-1.3 1-2.3 2.5-4 1.5 1.7 2.5 2.7 2.5 4Z"/></svg></div>
+      <div class="sol-track">
+        <a class="sol-card" href="pompe-a-chaleur.html">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3c2.4 2.6 3.6 4.4 3.6 6.3A3.6 3.6 0 0 1 7.4 9.6C7.4 7.7 8.6 5.8 11 3Z"/><path d="M17 13.5a3.5 3.5 0 1 1-5 0c0-1.3 1-2.3 2.5-4 1.5 1.7 2.5 2.7 2.5 4Z"/></svg></div>
           <h3>Pompe à chaleur air/eau</h3>
-          <p>Installation de pompes à chaleur air/eau à Lyon, Villeurbanne, Vénissieux, Bron, Caluire, Décines et toute la Métropole. Après prime CEE (jusqu'à 5 800 €) et Ma Prime Rénov (jusqu'à 5 000 €) : votre reste à charge peut descendre à 1 000 €. Installateurs RGE certifiés. Aucune démarche administrative de votre côté.</p>
-          <span class="tag">CEE + Ma Prime Rénov</span>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 11v9h12v-9"/><path d="M6 14.5h12"/><path d="M6 17.5h12"/></svg></div>
+          <span class="sol-tag">Reste à charge dès 1 000 €</span>
+        </a>
+        <a class="sol-card" href="isolation-thermique.html">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 11v9h12v-9"/><path d="M6 14.5h12"/><path d="M6 17.5h12"/></svg></div>
           <h3>Isolation thermique</h3>
-          <p>Isolation des combles, murs par l'extérieur et planchers à Lyon, Vénissieux, Bron, Caluire et toute la Métropole. Travaux éligibles aux CEE et Ma Prime Rénov. Installateurs RGE. Gain moyen sur la facture énergétique : 30 à 50 %.</p>
-          <span class="tag">CEE + Ma Prime Rénov</span>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M12 7v3"/><path d="M10 13h4"/></svg></div>
+          <span class="sol-tag">CEE + Ma Prime Rénov</span>
+        </a>
+        <a class="sol-card" href="ballon-thermodynamique.html">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M12 7v3"/><path d="M10 13h4"/></svg></div>
           <h3>Ballon thermodynamique</h3>
-          <p>Remplacement de votre ballon d'eau chaude classique par un ballon thermodynamique à Lyon, Villeurbanne et toute la Métropole. Économie annuelle : jusqu'à 60 % sur la production d'eau chaude sanitaire. Éligible aux aides CEE.</p>
-          <span class="tag">Éligible CEE</span>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h8a2.5 2.5 0 1 1-2.5 2.5"/></svg></div>
+          <span class="sol-tag">Éligible CEE</span>
+        </a>
+        <div class="sol-card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h8a2.5 2.5 0 1 1-2.5 2.5"/></svg></div>
           <h3>VMC double flux</h3>
-          <p>Installation de VMC double flux à Lyon, Villeurbanne, Décines et toute la Métropole. Améliore la qualité de l'air intérieur, réduit les pertes de chaleur. Éligible aux CEE.</p>
-          <span class="tag">Éligible CEE</span>
+          <span class="sol-tag">Éligible CEE</span>
         </div>
-        <div class="card">
-          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="11" rx="1"/><path d="M3 8h18"/><path d="M9 4v11"/><path d="M15 4v11"/><path d="M12 15v5"/><path d="M8 20h8"/></svg></div>
+        <a class="sol-card" href="panneaux-photovoltaiques.html">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="11" rx="1"/><path d="M3 8h18"/><path d="M9 4v11"/><path d="M15 4v11"/><path d="M12 15v5"/><path d="M8 20h8"/></svg></div>
           <h3>Panneaux photovoltaïques</h3>
-          <p>Installation de panneaux solaires photovoltaïques à Lyon, Bron, Caluire, Rillieux et toute la Métropole. Autoconsommation ou revente EDF OA. Réduction de votre facture électrique dès la première année.</p>
-          <span class="tag">Prime à l'autoconsommation</span>
-        </div>
+          <span class="sol-tag">Prime à l'autoconsommation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ILLUSTRATION CHANTIER (générique, pas un chantier réel) ============ -->
+  <section class="gallery-illu">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">À quoi ressemble un chantier type</h2>
+        <p class="illu-caption">Illustrations génériques — pas un chantier réel Eco Trans'Énergie</p>
+      </div>
+      <div class="illu-grid">
+        <figure>
+          <img src="assets/illustration-chantier-isolation.png" alt="Illustration d'un chantier d'isolation par l'extérieur avec pose de pompe à chaleur" loading="lazy">
+          <figcaption>Isolation par l'extérieur + pose de la pompe à chaleur</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/illustration-pac-facade.png" alt="Illustration d'une pompe à chaleur air/eau installée en façade" loading="lazy">
+          <figcaption>Résultat : pompe à chaleur installée, façade rénovée</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -707,6 +895,35 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     </div>
   </section>
 
+  <!-- ============ TRANSPARENCE (jeune structure, preuves concrètes) ============ -->
+  <section id="transparence" class="transparence">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Transparence</span>
+        <h2 class="h2">Une jeune structure, des engagements vérifiables</h2>
+        <p class="transp-intro">Eco Trans'Énergie est une entreprise récente : pas encore des dizaines d'avis en ligne, mais des garanties concrètes et vérifiables dès votre premier contact.</p>
+      </div>
+      <div class="transp-grid">
+        <div class="transp-item">
+          <span class="transp-k">SIRET 107 189 656 00013</span>
+          <span class="transp-v">Société immatriculée, vérifiable sur societe.com</span>
+        </div>
+        <div class="transp-item">
+          <span class="transp-k">Assurance décennale active</span>
+          <span class="transp-v">Contrat ERGO (courtier April Partenaires)</span>
+        </div>
+        <div class="transp-item">
+          <span class="transp-k">Médiateur de la consommation</span>
+          <span class="transp-v">CM2C, agréé par la CECMC</span>
+        </div>
+        <div class="transp-item">
+          <span class="transp-k">Visite technique sous 48h</span>
+          <span class="transp-v">Après votre demande de devis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FAQ ============ -->
   <section id="faq" class="faq">
     <div class="faq-inner">
@@ -743,49 +960,19 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     </div>
   </section>
 
-  <!-- ============ FORMULAIRE DEVIS ============ -->
-  <section id="formulaire-devis" class="contact">
+  <!-- ============ CTA FIN DE PAGE (renvoie vers le formulaire du hero) ============ -->
+  <section id="formulaire-devis" class="cta-bottom">
     <div class="wrap">
-      <div class="contact-inner">
+      <div class="cta-bottom-inner">
         <div>
           <span class="eyebrow" style="color:rgba(201,168,106,.7)">Diagnostic gratuit</span>
           <h2>Obtenez votre simulation personnalisée sous 48h</h2>
           <p>Un expert visite votre logement, analyse votre situation et vous remet une simulation chiffrée : coût total, montant de vos aides, reste à charge estimé. Gratuit et sans engagement.</p>
-          <div class="contact-actions">
-            <a href="tel:+33482533165" class="contact-tel">04 82 53 31 65</a>
-            <span class="contact-note">Lun–Ven 8h–19h · Sam 9h–17h</span>
-          </div>
         </div>
-        <div class="devis-form">
-          <h3>Votre diagnostic gratuit en 48h</h3>
-          <form name="devis" id="devisForm">
-            <div class="form-row">
-              <input type="text" name="prenom" placeholder="Prénom" required>
-              <input type="text" name="nom" placeholder="Nom" required>
-            </div>
-            <input type="tel" name="telephone" placeholder="Téléphone" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="code_postal" placeholder="Code postal" required>
-            <select name="chauffage" required>
-              <option value="" disabled selected>Mode de chauffage actuel</option>
-              <option value="gaz">Chaudière gaz</option>
-              <option value="fioul">Chaudière fioul</option>
-              <option value="electrique">Électrique (radiateurs)</option>
-              <option value="pac">Pompe à chaleur (déjà équipé)</option>
-              <option value="autre">Autre</option>
-            </select>
-            <select name="projet" required>
-              <option value="" disabled selected>Type de projet</option>
-              <option value="pac">Pompe à chaleur air/eau</option>
-              <option value="renovation-globale">Rénovation globale (Parcours Ampleur)</option>
-              <option value="photovoltaique">Panneaux photovoltaïques</option>
-              <option value="autre">Autre</option>
-              <option value="nsp">Je ne sais pas encore</option>
-            </select>
-            <button type="submit" class="btn-submit">Je demande mon diagnostic gratuit</button>
-          </form>
-          <p id="devisFormError" style="display:none;color:#B3261E;font-size:14px;margin-top:8px">L'envoi a échoué. Merci de réessayer, ou appelez-nous directement au <a href="tel:+33482533165" style="color:inherit;text-decoration:underline">04 82 53 31 65</a>.</p>
-          <p class="form-note">Sans engagement · Réponse sous 48h · <a href="mentions-legales.html" style="color:inherit;text-decoration:underline">Données confidentielles (RGPD)</a></p>
+        <div class="cta-bottom-actions">
+          <a href="#formulaire" class="btn-gold">Obtenir mon estimation gratuite</a>
+          <a href="tel:+33482533165" class="cta-bottom-tel">04 82 53 31 65</a>
+          <span class="cta-bottom-note">Lun–Ven 8h–19h · Sam 9h–17h</span>
         </div>
       </div>
     </div>
@@ -822,36 +1009,15 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <li><a href="#services">Nos services</a></li>
           <li><a href="#process">Comment ça marche</a></li>
           <li><a href="#aides">Aides 2026</a></li>
-          <li><a href="simulateur.html">Simulateur d'économies</a></li>
-          <li><a href="guide-aides-financieres-2026.html">Guide des aides 2026</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="footer-sep"><a href="partenaires.html">Partenaires</a></li>
-          <li><a href="professionnels.html">Professionnels &amp; Tertiaire</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
           <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Pompe à chaleur</li>
-          <li>Isolation</li>
-          <li>Ballon thermodynamique</li>
-          <li>VMC</li>
-          <li>Panneaux solaires</li>
-        </ul>
-        <h4 style="margin-top:22px">Nos zones</h4>
-        <ul>
-          <li><a href="pompe-a-chaleur-lyon.html">Lyon</a></li>
-          <li><a href="pompe-a-chaleur-villeurbanne.html">Villeurbanne</a></li>
-          <li><a href="pompe-a-chaleur-venissieux.html">Vénissieux</a></li>
-          <li><a href="pompe-a-chaleur-bron.html">Bron</a></li>
-          <li><a href="pompe-a-chaleur-caluire.html">Caluire-et-Cuire</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a class="footer-tel" href="tel:+33482533165">04 82 53 31 65</a></li>
+          <li><a href="https://wa.me/33482533165?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20projet%20de%20r%C3%A9novation%20%C3%A9nerg%C3%A9tique." target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:contact@ecotransenergie.fr">contact@ecotransenergie.fr</a></li>
           <li>27 rue Maurice Flandin</li>
           <li>69003 Lyon</li>
@@ -1023,50 +1189,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   })();
   </script>
 
-  <script>
-  (function(){
-    var form=document.getElementById('devisForm');
-    if(!form)return;
-    var errorMsg=document.getElementById('devisFormError');
-    var submitBtn=form.querySelector('.btn-submit');
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      if(errorMsg)errorMsg.style.display='none';
-      if(!form.checkValidity()){ form.reportValidity(); return; }
-      if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Envoi en cours...';}
-      var data=Object.fromEntries(new FormData(form).entries());
-      var params=new URLSearchParams(window.location.search);
-      data.source=params.get('utm_source')?params.get('utm_source')+(params.get('utm_campaign')?'-'+params.get('utm_campaign'):''):'devis-index';
-      data.access_key='df0e5977-4754-4637-b232-f70e6cffe41f';
-      data.subject='Nouveau lead - Devis (site particulier)';
-      if(typeof gtag==='function')gtag('event','form_submit_attempt',{form_name:'devis'});
-      fetch('https://api.web3forms.com/submit',{
-        method:'POST',
-        headers:{'Content-Type':'application/json',Accept:'application/json'},
-        body:JSON.stringify(data)
-      }).then(function(res){return res.json();})
-      .then(function(json){
-        if(!json||json.success!==true)throw new Error('Web3Forms a refuse la demande');
-        if(typeof fbq==='function')fbq('track','Lead');
-        if(typeof gtag==='function'){
-          gtag('event','generate_lead',{form_name:'devis'});
-          gtag('event','form_submit_success',{form_name:'devis'});
-        }
-        window.location.href='merci.html';
-      }).catch(function(){
-        if(typeof gtag==='function')gtag('event','form_submit_error',{form_name:'devis'});
-        if(errorMsg)errorMsg.style.display='block';
-        if(submitBtn){submitBtn.disabled=false;submitBtn.textContent='Je demande mon diagnostic gratuit';}
-      });
-    });
-  })();
-  </script>
-<script>document.querySelectorAll(".mobile-nav a").forEach(function(a){a.addEventListener("click",function(){var cb=document.getElementById("nav-toggle");if(cb)cb.checked=false;});});</script>
+  <script>document.querySelectorAll(".mobile-nav a").forEach(function(a){a.addEventListener("click",function(){var cb=document.getElementById("nav-toggle");if(cb)cb.checked=false;});});</script>
 
 <!-- ============ CTA FLOTTANT MOBILE ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="#formulaire-devis" class="sc-devis" id="stickyCtaDevis">Mon estimation</a>
+  <a href="#formulaire" class="sc-devis" id="stickyCtaDevis">Mon estimation</a>
   <a href="tel:+33482533165" class="sc-tel">Appeler</a>
+  <a href="https://wa.me/33482533165?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20projet%20de%20r%C3%A9novation%20%C3%A9nerg%C3%A9tique." class="sc-whatsapp" id="stickyCtaWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
 <script>
@@ -1076,6 +1205,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   // Clic sur le CTA flottant -> ouvre le formulaire de devis
   document.getElementById('stickyCtaDevis').addEventListener('click',function(){
     track('cta_click',{cta_location:'sticky_mobile'});
+  });
+
+  // Clic sur le bouton WhatsApp du CTA flottant
+  var stickyWhatsapp=document.getElementById('stickyCtaWhatsapp');
+  if(stickyWhatsapp) stickyWhatsapp.addEventListener('click',function(){
+    track('whatsapp_click',{link_location:'sticky_mobile'});
   });
 
   // Tout lien tel: sur la page
@@ -1088,26 +1223,189 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     a.addEventListener('click',function(){ track('simulator_start',{link_location:a.closest('section')?a.closest('section').id||'unknown':'unknown'}); });
   });
 
-  // Vue du bloc formulaire (form_view), une seule fois
-  var formSection=document.getElementById('formulaire-devis');
-  if(formSection && 'IntersectionObserver' in window){
-    var seen=false;
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting && !seen){ seen=true; track('form_view'); obs.disconnect(); }
-      });
-    },{threshold:0.3});
-    obs.observe(formSection);
+})();
+</script>
+
+<!-- ============ GRAPHIQUE HERO (facture gaz vs PAC sur 10 ans) ============ -->
+<script>
+(function(){
+  var cv=document.getElementById('heroChart'); if(!cv) return;
+  var ctx=cv.getContext('2d');
+  var W=cv.width,H=cv.height, pad={l:30,r:14,t:16,b:26};
+  var years=10, factureInit=2200, hausseGaz=.055, ecoPac=.40;
+  var gaz=[],pac=[];
+  for(var yr=0;yr<=years;yr++){
+    var f=factureInit*Math.pow(1+hausseGaz,yr);
+    gaz.push(f); pac.push(f*(1-ecoPac));
+  }
+  var maxV=Math.max.apply(null,gaz)*1.08;
+  function x(i){return pad.l+(W-pad.l-pad.r)*(i/years)}
+  function y(v){return H-pad.b-(H-pad.t-pad.b)*(v/maxV)}
+  function grid(){
+    ctx.strokeStyle='rgba(255,255,255,.09)'; ctx.lineWidth=1;
+    for(var g=0;g<=3;g++){
+      var vy=pad.t+(H-pad.t-pad.b)*g/3;
+      ctx.beginPath();ctx.moveTo(pad.l,vy);ctx.lineTo(W-pad.r,vy);ctx.stroke();
+    }
+  }
+  function line(data,color,glow){
+    ctx.beginPath();
+    for(var i=0;i<data.length;i++){
+      var px=x(i),py=y(data[i]);
+      if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);
+    }
+    ctx.strokeStyle=color;ctx.lineWidth=3;ctx.lineJoin='round';ctx.lineCap='round';
+    if(glow){ctx.shadowColor=color;ctx.shadowBlur=14;}
+    ctx.stroke();
+    ctx.shadowBlur=0;
+  }
+  function dot(i,data,color){
+    ctx.beginPath();ctx.arc(x(i),y(data[i]),4.5,0,7);
+    ctx.fillStyle=color;ctx.fill();
+    ctx.lineWidth=2;ctx.strokeStyle='#0A3A24';ctx.stroke();
+  }
+  var progress=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    grid();
+    var n=Math.max(1,Math.round(years*progress));
+    line(gaz.slice(0,n+1),'#C0392B',false);
+    line(pac.slice(0,n+1),'#EAD3A0',true);
+    if(progress>0.02){ dot(n,gaz,'#C0392B'); dot(n,pac,'#EAD3A0'); }
+  }
+  function animate(){
+    progress+=0.02;
+    if(progress>1){progress=1;draw();return;}
+    draw();
+    requestAnimationFrame(animate);
+  }
+  draw();
+  requestAnimationFrame(animate);
+})();
+</script>
+
+<!-- ============ FORMULAIRE HERO MULTI-ÉTAPES (full funnel) ============ -->
+<script>
+(function(){
+  function track(name,params){ if(typeof gtag==='function') gtag('event', name, params||{}); }
+  track('form_view',{form_name:'homepage_v2_hero'});
+
+  var currentStep=1;
+  var totalSteps=5;
+  var answers={};
+  var startedTracked=false;
+
+  var steps=document.querySelectorAll('#pacForm .fstep');
+  var progressFill=document.getElementById('progressFill');
+  var progressPct=document.getElementById('progressPct');
+  if(!steps.length) return;
+
+  function goTo(step){
+    steps.forEach(function(s){ s.classList.toggle('active', parseInt(s.getAttribute('data-step'),10)===step); });
+    currentStep=step;
+    var pct=Math.round((step/totalSteps)*100);
+    progressFill.style.width=pct+'%';
+    progressPct.textContent=pct+' %';
   }
 
-  // Premiere interaction dans le formulaire (form_start), une seule fois
-  var devisForm=document.getElementById('devisForm');
-  if(devisForm){
-    var started=false;
-    devisForm.addEventListener('input',function(){
-      if(!started){ started=true; track('form_start'); }
-    },{once:false});
-  }
+  document.querySelectorAll('#pacForm .opt-grid').forEach(function(grid){
+    var field=grid.getAttribute('data-field');
+    grid.querySelectorAll('.opt-card').forEach(function(card){
+      card.addEventListener('click',function(){
+        if(!startedTracked){ track('form_start',{form_name:'homepage_v2_hero'}); startedTracked=true; }
+        grid.querySelectorAll('.opt-card').forEach(function(c){c.classList.remove('selected');});
+        card.classList.add('selected');
+        answers[field]=card.getAttribute('data-value');
+        track('form_step',{form_name:'homepage_v2_hero',field:field,value:answers[field]});
+        setTimeout(function(){ if(currentStep<4) goTo(currentStep+1); },220);
+      });
+    });
+  });
+
+  document.querySelectorAll('#pacForm [data-back]').forEach(function(btn){
+    btn.addEventListener('click',function(){ if(currentStep>1) goTo(currentStep-1); });
+  });
+
+  document.querySelectorAll('#pacForm [data-next]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var step4=document.querySelector('#pacForm .fstep[data-step="4"]');
+      if(step4.classList.contains('active')){
+        var ville=document.getElementById('ville').value.trim();
+        var cp=document.getElementById('cp').value.trim();
+        if(!ville||!cp){ document.getElementById('ville').reportValidity(); return; }
+        answers.ville=ville; answers.code_postal=cp;
+      }
+      goTo(parseInt(btn.getAttribute('data-next'),10));
+    });
+  });
+
+  var form=document.getElementById('pacForm');
+  var errorMsg=document.getElementById('fformError');
+  var errorMsgDefaultHTML=errorMsg.innerHTML;
+  var submitBtn=document.getElementById('submitBtn');
+  var telField=document.getElementById('telephone');
+  var telPattern=/^(0|\+33\s?)[1-9](\s?\d{2}){4}$/;
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    errorMsg.style.display='none';
+
+    if(!form.checkValidity()){ goTo(5); form.reportValidity(); return; }
+
+    var telVal=telField.value.trim();
+    if(!telPattern.test(telVal.replace(/[.\-]/g,''))){
+      goTo(5);
+      telField.setCustomValidity('Merci de saisir un numéro de téléphone français valide (ex. 06 12 34 56 78).');
+      telField.reportValidity();
+      telField.addEventListener('input',function clearCustom(){ telField.setCustomValidity(''); telField.removeEventListener('input',clearCustom); });
+      return;
+    }
+
+    if(!answers.statut || !answers.chauffage || !answers.revenus){
+      errorMsg.textContent='Merci de compléter toutes les étapes précédentes avant d\'envoyer votre demande.';
+      errorMsg.style.display='block';
+      return;
+    }
+
+    submitBtn.disabled=true; submitBtn.textContent='Envoi en cours...';
+
+    var params=new URLSearchParams(window.location.search);
+    var data={
+      nom:document.getElementById('nom').value,
+      telephone:document.getElementById('telephone').value,
+      email:document.getElementById('email').value,
+      ville:answers.ville||'',
+      code_postal:answers.code_postal||'',
+      statut_occupation:answers.statut||'',
+      energie_actuelle:answers.chauffage||'',
+      profil_revenus:answers.revenus||'',
+      type_projet:'Pompe à chaleur air/eau',
+      subject:'Nouveau lead - Homepage v2 hero',
+      access_key:'df0e5977-4754-4637-b232-f70e6cffe41f'
+    };
+    data.source=params.get('utm_source')?params.get('utm_source')+(params.get('utm_campaign')?'-'+params.get('utm_campaign'):''):'homepage-v2-hero';
+
+    track('form_submit_attempt',{form_name:'homepage_v2_hero'});
+
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(res){return res.json();})
+    .then(function(json){
+      if(!json||json.success!==true) throw new Error('Web3Forms a refuse la demande');
+      if(typeof fbq==='function') fbq('track','Lead');
+      track('generate_lead',{form_name:'homepage_v2_hero'});
+      track('form_submit_success',{form_name:'homepage_v2_hero'});
+      var q=new URLSearchParams({profil:answers.revenus||'',chauffage:answers.chauffage||'',statut:answers.statut||''});
+      window.location.href='merci.html?'+q.toString();
+    }).catch(function(){
+      track('form_submit_error',{form_name:'homepage_v2_hero'});
+      errorMsg.innerHTML=errorMsgDefaultHTML;
+      errorMsg.style.display='block';
+      submitBtn.disabled=false; submitBtn.textContent='Recevoir mon estimation';
+    });
+  });
 })();
 </script>
 </body>
