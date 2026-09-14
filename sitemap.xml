@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ecotransenergie.fr/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://ecotransenergie.fr/simulateur.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecotransenergie.fr/pompe-a-chaleur.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecotransenergie.fr/isolation-thermique.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecotransenergie.fr/ballon-thermodynamique.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecotransenergie.fr/panneaux-photovoltaiques.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecotransenergie.fr/professionnels.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecotransenergie.fr/partenaires.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ecotransenergie.fr/qui-sommes-nous.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ecotransenergie.fr/guide-aides-financieres-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecotransenergie.fr/blog.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ecotransenergie.fr/blog-pac-air-eau-maison-lyon.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

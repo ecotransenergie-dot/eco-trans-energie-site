@@ -69,7 +69,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
   /* Main */
   .main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 40px}
-  .card{background:#fff;border-radius:8px;box-shadow:0 8px 40px rgba(15,81,50,.10);padding:64px 56px;max-width:600px;width:100%;text-align:center}
+  .card{background:#fff;border-radius:8px;box-shadow:0 8px 40px rgba(15,81,50,.10);padding:64px 56px;max-width:660px;width:100%;text-align:center}
   .icon{width:72px;height:72px;background:#0F5132;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
   .icon svg{width:36px;height:36px}
   .card h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#0F5132;margin-bottom:16px;line-height:1.2}
@@ -88,6 +88,30 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   /* Footer */
   .site-footer{background:#0F5132;padding:24px 40px;text-align:center}
   .site-footer p{font-size:13px;color:rgba(245,240,232,.6)}
+
+  /* Bloc estimation personnalisée */
+  .estim{background:#0F5132;border-radius:8px;padding:28px 30px;margin:28px 0;text-align:left;color:#fff}
+  .estim h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;color:#C9A86A;text-transform:uppercase;margin-bottom:16px}
+  .estim-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px}
+  .estim-row.final{border-bottom:none;padding-top:14px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:#C9A86A}
+  .estim-note{font-size:11.5px;color:rgba(245,240,232,.65);margin-top:14px;line-height:1.5}
+  .estim-links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .estim-links a{font-size:12.5px;font-weight:700;color:#0F5132;background:#C9A86A;padding:9px 14px;border-radius:4px;text-decoration:none;font-family:'Montserrat',sans-serif}
+  .estim-icons{display:flex;justify-content:space-between;gap:8px;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .ei{flex:1;text-align:center;font-size:10.5px;color:rgba(245,240,232,.8);line-height:1.3}
+  .ei-ic{display:block;font-size:20px;margin-bottom:6px}
+  .estim-sources{font-size:10.5px;color:rgba(245,240,232,.5);margin-top:14px;line-height:1.6}
+  .estim-sources a{color:rgba(245,240,232,.75);text-decoration:underline}
+
+  .catalog{margin:28px 0;text-align:left}
+  .catalog-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;color:#0F5132;text-transform:uppercase;margin-bottom:14px;text-align:center}
+  .catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .cat-card{display:flex;flex-direction:column;gap:6px;background:#F5F0E8;border-radius:8px;padding:16px 14px;text-decoration:none;transition:box-shadow .15s}
+  .cat-card:hover{box-shadow:0 4px 16px rgba(15,81,50,.12)}
+  .cat-ic{font-size:22px}
+  .cat-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;color:#0F5132}
+  .cat-desc{font-size:10.5px;color:#7a7568;line-height:1.4}
+  @media(max-width:600px){.catalog-grid{grid-template-columns:1fr}}
 
   @media(max-width:600px){
     .card{padding:40px 24px}
@@ -137,6 +161,48 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       </div>
     </div>
 
+    <div class="estim" id="estimBlock" style="display:none">
+      <div class="estim-icons" id="estimIcons">
+        <div class="ei"><span class="ei-ic">🔥</span><span>Pompe à chaleur</span></div>
+        <div class="ei"><span class="ei-ic">💧</span><span>Ballon thermodynamique</span></div>
+        <div class="ei"><span class="ei-ic">🛡️</span><span>Garantie décennale</span></div>
+        <div class="ei"><span class="ei-ic">🔧</span><span>Entretien annuel</span></div>
+      </div>
+      <h3>Votre premier aperçu, avant notre appel</h3>
+      <div id="estimRows"></div>
+      <p class="estim-note" id="estimNote"></p>
+      <div class="estim-links">
+        <a href="guide-aides-financieres-2026.html">Voir le guide complet des aides 2026</a>
+      </div>
+      <p class="estim-sources">Sources officielles : <a href="https://france-renov.gouv.fr" target="_blank" rel="noopener">France Rénov'</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.legifrance.gouv.fr" target="_blank" rel="noopener">Légifrance</a> (arrêtés CEE en vigueur)</p>
+    </div>
+
+    <div class="catalog" id="catalogBlock" style="display:none">
+      <h3 class="catalog-title">D'autres solutions pour compléter votre projet</h3>
+      <div class="catalog-grid">
+        <a class="cat-card" href="isolation-thermique.html">
+          <span class="cat-ic">🏠</span>
+          <span class="cat-name">Isolation thermique</span>
+          <span class="cat-desc">Combles, murs, planchers. Gain moyen : 30 à 50 % sur la facture.</span>
+        </a>
+        <a class="cat-card" href="ballon-thermodynamique.html">
+          <span class="cat-ic">💧</span>
+          <span class="cat-name">Ballon thermodynamique</span>
+          <span class="cat-desc">Jusqu'à 60 % d'économie sur l'eau chaude sanitaire.</span>
+        </a>
+        <a class="cat-card" href="panneaux-photovoltaiques.html">
+          <span class="cat-ic">☀️</span>
+          <span class="cat-name">Panneaux photovoltaïques</span>
+          <span class="cat-desc">Autoconsommation ou revente, réduction dès la 1ère année.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="steps" style="background:#fff;border:1.5px solid #C9A86A" id="genericGuideBlock">
+      <h3>En attendant notre appel</h3>
+      <p style="margin:0">Consultez notre <a href="guide-aides-financieres-2026.html" style="color:#0F5132;font-weight:700;text-decoration:underline">guide des aides 2026</a> pour avoir déjà une idée des montants MaPrimeRénov' et CEE auxquels vous pourriez être éligible.</p>
+    </div>
+
     <p>Une question urgente ? Appelez-nous directement.</p>
     <a class="btn-gold" href="/">Retour à l'accueil</a>
     <a class="tel" href="tel:+33482533165">04 82 53 31 65</a>
@@ -146,6 +212,53 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <footer class="site-footer">
   <p>© 2026 Eco Trans'Énergie — Rénovation énergétique en Auvergne-Rhône-Alpes</p>
 </footer>
+
+<script>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var profil=params.get('profil');
+  var chauffage=params.get('chauffage');
+  var statut=params.get('statut');
+  if(!profil || statut==='locataire') return; // pas d'estimation chiffrée pour locataire (aides reservees proprietaires) ou si le profil est inconnu
+
+  // Barèmes vérifiés (identiques à blog-bareme-cee-maprimerenov-pac-2026.html)
+  var MPR={tres_modeste:5000,modeste:4000,intermediaire:3000,superieur:0,ne_sait_pas:null};
+  var fossile=(chauffage==='gaz'||chauffage==='fioul');
+  var CEE_TM=5800, CEE_AUTRES=4000;
+  var mpr=MPR.hasOwnProperty(profil)?MPR[profil]:null;
+  var prixBase=11800; // PAC air/eau 12kW, reference basse (simulateur.html)
+  var prixHaut=16990; // PAC air/eau 14kW Premium, reference haute (simulateur.html)
+
+  var nf=new Intl.NumberFormat('fr-FR');
+  var rows=document.getElementById('estimRows');
+  var note=document.getElementById('estimNote');
+
+  if(mpr===null){
+    // profil "ne sait pas" -> pas de chiffrage, on invite au guide
+    return;
+  }
+
+  var html='';
+  html+='<div class="estim-row"><span>Prix indicatif PAC air/eau (avant aides)</span><span>'+nf.format(prixBase)+' € – '+nf.format(prixHaut)+' €</span></div>';
+  html+='<div class="estim-row"><span>MaPrimeRénov\' estimée</span><span>'+(mpr>0?'- '+nf.format(mpr)+' €':'Non éligible sur ce geste')+'</span></div>';
+
+  if(fossile){
+    var cee=(profil==='tres_modeste')?CEE_TM:CEE_AUTRES;
+    html+='<div class="estim-row"><span>Prime CEE estimée</span><span>- '+nf.format(cee)+' €</span></div>';
+    var reste=Math.max(0,prixBase-mpr-cee);
+    html+='<div class="estim-row final"><span>Reste à charge estimé</span><span>'+nf.format(reste)+' €</span></div>';
+    note.textContent='Estimation non contractuelle, avant diagnostic technique et vérification officielle de votre éligibilité. Le montant exact vous sera confirmé après simulation sur notre espace mandataire et visite de votre logement.';
+  } else {
+    html+='<div class="estim-row"><span>Prime CEE</span><span>Variable hors remplacement chaudière gaz/fioul</span></div>';
+    note.textContent='Sans remplacement d\'une chaudière gaz ou fioul, la prime CEE "Coup de Pouce" ne s\'applique pas de la même façon — votre conseiller vous donnera le détail exact lors de l\'appel.';
+  }
+
+  rows.innerHTML=html;
+  document.getElementById('estimBlock').style.display='block';
+  document.getElementById('catalogBlock').style.display='block';
+  document.getElementById('genericGuideBlock').style.display='none';
+})();
+</script>
 
 </body>
 </html>
