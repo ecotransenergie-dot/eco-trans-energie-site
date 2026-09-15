@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KN3LHH01CF"></script>
+<!-- Consentement cookies (tarteaucitron.js) -->
+<script src="assets/tarteaucitron/tarteaucitron.min.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KN3LHH01CF');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+tarteaucitron.init({
+  "privacyUrl": "mentions-legales.html#confidentialite",
+  "bodyPosition": "bottom",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "middle",
+  "groupServices": true,
+  "showDetailsOnClick": true,
+  "serviceDefaultState": "wait",
+  "closePopup": true,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "googleConsentMode": true
+});
+
+tarteaucitron.services.gtag = {
+  "key": "gtag",
+  "type": "analytic",
+  "name": "Google Analytics",
+  "needConsent": true,
+  "cookies": ["_ga","_gid"],
+  "js": function () {
+    var s=document.createElement('script');
+    s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-KN3LHH01CF';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-KN3LHH01CF');
+  }
+};
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+
+tarteaucitron.services.metapixel = {
+  "key": "metapixel",
+  "type": "advertising",
+  "name": "Meta Pixel",
+  "needConsent": true,
+  "cookies": ["_fbp"],
+  "js": function () {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '805216059249030');
+    fbq('track', 'PageView');
+  }
+};
+(tarteaucitron.job = tarteaucitron.job || []).push('metapixel');
+
+tarteaucitron.services.linkedininsight = {
+  "key": "linkedininsight",
+  "type": "advertising",
+  "name": "LinkedIn Insight Tag",
+  "needConsent": true,
+  "cookies": ["li_sugr","bcookie","lidc"],
+  "js": function () {
+    window._linkedin_partner_id = "9335850";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l) {
+      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+      window.lintrk.q=[]}
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript";b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);})(window.lintrk);
+  }
+};
+(tarteaucitron.job = tarteaucitron.job || []).push('linkedininsight');
 </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '805216059249030');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=805216059249030&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<!-- LinkedIn Insight Tag -->
-<script type="text/javascript">
-_linkedin_partner_id = "9335850";
-window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-</script>
-<script type="text/javascript">
-(function(l) {
-if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-window.lintrk.q=[]}
-var s = document.getElementsByTagName("script")[0];
-var b = document.createElement("script");
-b.type = "text/javascript";b.async = true;
-b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-s.parentNode.insertBefore(b, s);})(window.lintrk);
-</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9335850&fmt=gif" />
-</noscript>
-<!-- End LinkedIn Insight Tag -->
+<!-- Fin consentement cookies -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mentions légales & Politique de confidentialité | Eco Trans'Énergie</title>
@@ -160,7 +199,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <p>Vous disposez également du droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
 
   <h2>5. Cookies</h2>
-  <p>Ce site n'utilise pas de cookies publicitaires ou de traceurs tiers. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être déposés. Ils n'requièrent pas votre consentement préalable.</p>
+  <p>Ce site dépose des cookies techniques strictement nécessaires à son fonctionnement, ainsi que des cookies de mesure d'audience et publicitaires émis par les services tiers suivants : Google (Google Analytics, Google Ads), Meta (Facebook Pixel) et LinkedIn (LinkedIn Insight Tag). Ces cookies permettent de mesurer la fréquentation du site et d'évaluer l'efficacité de nos campagnes publicitaires.</p>
+  <p>Conformément au RGPD et à la directive ePrivacy, le dépôt de ces cookies non essentiels est soumis à votre consentement préalable. Vous pouvez vous opposer à ce suivi à tout moment via les paramètres de confidentialité de votre navigateur, ou directement depuis les outils de gestion proposés par Google, Meta et LinkedIn.</p>
 
   <h2>6. Responsabilité</h2>
   <p>Eco Trans'Énergie s'efforce de maintenir les informations du site à jour et exactes. Les montants d'aides (CEE, Ma Prime Rénov) indiqués sont donnés à titre indicatif et peuvent varier selon les conditions d'éligibilité et l'évolution de la réglementation. Seul un audit personnalisé permet de déterminer les aides applicables à votre situation.</p>
