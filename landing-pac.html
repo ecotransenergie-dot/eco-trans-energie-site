@@ -87,14 +87,14 @@ tarteaucitron.services.linkedininsight = {
 <!-- Fin consentement cookies -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prix d'une pompe à chaleur 2026 — Estimation gratuite | Eco Trans'Énergie</title>
-<meta name="description" content="Obtenez le prix d'une pompe à chaleur air/eau et votre reste à charge après aides (MaPrimeRénov' + CEE) en 2 minutes. Installateurs partenaires certifiés RGE à Lyon Métropole.">
+<title>Pompe à chaleur dès 1 000 € — Estimation gratuite | Eco Trans'Énergie</title>
+<meta name="description" content="Votre pompe à chaleur air/eau dès 1 000 € de reste à charge selon votre profil, après MaPrimeRénov' et CEE. Simulation gratuite en 2 minutes. Installateurs partenaires certifiés RGE à Lyon Métropole.">
 <meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Eco Trans'Énergie">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Prix d'une pompe à chaleur 2026 — Estimation gratuite | Eco Trans'Énergie">
-<meta property="og:description" content="Estimation gratuite en 2 minutes : prix, aides et reste à charge pour votre pompe à chaleur air/eau.">
+<meta property="og:title" content="Pompe à chaleur dès 1 000 € — Estimation gratuite | Eco Trans'Énergie">
+<meta property="og:description" content="Votre pompe à chaleur air/eau dès 1 000 € de reste à charge selon votre profil. Simulation gratuite en 2 minutes.">
 <meta property="og:url" content="https://ecotransenergie.fr/landing-pac.html">
 <meta property="og:image" content="https://ecotransenergie.fr/assets/hero-pac.jpg">
 <link rel="canonical" href="https://ecotransenergie.fr/landing-pac.html">
@@ -126,8 +126,9 @@ tarteaucitron.services.linkedininsight = {
   .badge-loc{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(15,81,50,.18);border-radius:40px;padding:8px 16px 8px 12px;font-size:13px;color:#0F5132;font-weight:600;margin-bottom:22px}
   .badge-loc svg{flex-shrink:0}
 
-  h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;color:#0F5132;margin-bottom:16px}
+  h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;color:#0F5132;margin-bottom:10px}
   h1 .gold{color:#C9A86A}
+  .hero-price-note{font-size:13px;line-height:1.5;color:#8A8A8A;margin-bottom:18px;max-width:460px}
   .hero-sub{font-size:17px;line-height:1.5;color:#4A4A4A;margin-bottom:26px}
 
   .bullets{list-style:none;margin-bottom:28px}
@@ -142,6 +143,11 @@ tarteaucitron.services.linkedininsight = {
 
   /* ===== FORM CARD ===== */
   .form-card{background:#fff;border-radius:12px;box-shadow:0 20px 60px -15px rgba(15,81,50,.25);padding:30px 30px 26px;position:sticky;top:20px}
+
+  .form-trust{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid #F0EBE0}
+  .form-trust .ft{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:#0F5132;background:#F5F0E8;border-radius:30px;padding:6px 12px 6px 9px}
+  .form-trust .ft svg{flex-shrink:0}
+
   .progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
   .progress-track{flex:1;height:6px;background:#F0EBE0;border-radius:99px;margin-right:14px;overflow:hidden}
   .progress-fill{height:100%;background:linear-gradient(90deg,#C9A86A,#0F5132);border-radius:99px;width:20%;transition:width .35s ease}
@@ -233,8 +239,9 @@ tarteaucitron.services.linkedininsight = {
         Installateurs partenaires disponibles à Lyon Métropole
       </div>
 
-      <h1>Quel est le prix d'une pompe à chaleur <span class="gold" id="heroDate"></span> ?</h1>
-      <p class="hero-sub">Obtenez une estimation personnalisée et gratuite en 2 minutes — prix, aides et reste à charge réel.</p>
+      <h1>Votre pompe à chaleur air/eau <span class="gold">dès 1 000 €*</span></h1>
+      <p class="hero-price-note">*Reste à charge après déduction de MaPrimeRénov' et des CEE, selon votre profil de revenus. Simulation gratuite et personnalisée en 48h.</p>
+      <p class="hero-sub">Prix d'une pompe à chaleur <span id="heroDate"></span> : obtenez votre estimation personnalisée en 2 minutes.</p>
 
       <ul class="bullets">
         <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Réduisez votre facture de chauffage</strong> jusqu'à 55 % selon votre énergie actuelle</span></li>
@@ -250,6 +257,12 @@ tarteaucitron.services.linkedininsight = {
     </div>
 
     <div class="form-card" id="formulaire">
+      <div class="form-trust">
+        <span class="ft"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Installateurs certifiés RGE</span>
+        <span class="ft"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>Assurance décennale</span>
+        <span class="ft"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Réponse sous 48h</span>
+        <span class="ft"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>0€ à la signature</span>
+      </div>
       <div class="progress-row">
         <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
         <span class="progress-pct" id="progressPct">20 %</span>
